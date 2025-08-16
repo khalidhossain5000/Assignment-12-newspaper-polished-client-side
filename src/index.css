@@ -77,13 +77,22 @@ a.active{
     background-color: white;
     right:10px;
     padding: 30px;
-    color: #16b7cc !important;
+    color: #ffdc26 !important;
     fill: black !important;
     stroke: black !important;
     border-radius: 50%;
     font-size: 30px !important;
 }
 
+
+
+/* Mobile (<640px): hide arrows */
+@media (max-width: 639px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
+}
 
 
 
@@ -99,11 +108,62 @@ a.active{
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  background-color: #16b7cc;
+  background-color: #ffdc26;
   color: white !important;
   transition: .3s;
   transform: scale(1.15); /* slight zoom on hover */
 }
+
+
+/* Adjust for mobile */
+@media (max-width: 768px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    padding: 15px;
+    font-size: 20px !important;
+  }
+}
+
+
+/* Adjust for very small screens */
+@media (max-width: 480px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    padding: 10px;
+    font-size: 18px !important;
+  }
+}
+
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    padding: 15px;
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 20px !important;
+  }
+}
+
+
+/* Very small devices */
+@media (max-width: 480px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    padding: 10px;
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 15px !important;
+  }
+}
+
+
+
+
+
 
 /* font */
 .playfair-display{

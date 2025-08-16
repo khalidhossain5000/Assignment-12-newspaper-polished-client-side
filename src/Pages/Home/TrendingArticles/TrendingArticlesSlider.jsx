@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link  } from 'react-router';
+import { Link } from "react-router";
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../../Hooks/useAuth";
 import Loading from "../../Shared/Loading/Loading";
@@ -18,15 +18,11 @@ import { FaGripfire } from "react-icons/fa";
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 
-
 const TrendingArticlesSlider = () => {
   const { user } = useAuth();
-  const axionsInstance = useAxios()
+  const axionsInstance = useAxios();
 
   const badgeRefs = useRef([]);
-
-
-
 
   const { data: trendingArticles = [], isPending } = useQuery({
     queryKey: ["trendingArticles", user?.email],
@@ -35,118 +31,136 @@ const TrendingArticlesSlider = () => {
       return res.data;
     },
   });
-   
 
- 
-useEffect(() => {
-  badgeRefs.current.forEach((badge) => {
-    if (!badge) return;
-    gsap.to(badge, {
-      scale: 1.08,
-      duration: 1.2,
-      repeat: -1,
-      yoyo: true,
-      ease: "power1.inOut",
+  useEffect(() => {
+    badgeRefs.current.forEach((badge) => {
+      if (!badge) return;
+      gsap.to(badge, {
+        scale: 1.08,
+        duration: 1.2,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut",
+      });
     });
-  });
-}, [trendingArticles]); // ডাটা লোড হলে animate
-
+  }, [trendingArticles]);
 
   if (isPending) return <Loading />;
 
-
-  
   //attaching bg images to the data
   const sliderData = trendingArticles.map((article, i) => ({
     ...article,
     bgImage: bgImages[i],
   }));
   return (
-    <Swiper 
-        modules={[Navigation, Autoplay]}
-        spaceBetween={50}
-        slidesPerView={1}
-        navigation
-        loop={true}
-        autoplay={{ delay: 5000 }}
+    <Swiper
+      modules={[Navigation, Autoplay]}
+      spaceBetween={50}
+      slidesPerView={1}
+      navigation
+      loop={true}
+      autoplay={{ delay: 5000 }}
     >
       {sliderData.map((item, i) => (
         <SwiperSlide key={i}>
           <div
-            className="z-0 relative h-[100vh] lg:h-[calc(100vh-80px)] bg-cover bg-center  text-white p-4 md:p-9 lg:px-24 pb-24"
+            className="z-0 relative h-[100vh] lg:h-[calc(100vh-90px)] bg-cover bg-center p-4 md:p-9 lg:px-24 pb-24 flex flex-col justify-center "
             style={{ backgroundImage: `url(${item.bgImage})` }}
           >
-            <div className="shadow-xl lg:ml-36 w-full lg:w-[600px] bg-white p-5 md:p-9 rounded-md ">
-{/* 
-              <div className="w-22 badgete bg-red-600 shadow-2xl rounded-xl p-1 lg:max-w-36 text-center">
+            <div className="rounded-lg  bg-light-primary px-3 py-9 md:p-6 lg:p-9 xl:px-12 xl:py-16 xl:w-[850px]">
+              {/* trending badge */}
+              <div
+                ref={(el) => (badgeRefs.current[i] = el)}
+                className="w-22 badge bg-light-accent shadow-2xl rounded-md  p-1 lg:px-3 lg:py-4 lg:w-36 text-center relative overflow-hidden"
+              >
+                <h2 className="lg:text-xl font-medium inter md:font-bold text-light-text z-10 relative">
+                  Trending
+                </h2>
+              </div>
+              {/* article author and date */}
+              <div className="mt-3 author-info text-light-text flex justify-between md:justify-between gap-3 py-2 md:py-3 font-secondary ">
+                <p className="md:text-xl font-medium  md:font-bold">
+                  {item?.createdAt.split("T")[0]}
+                </p>
+                <h3 className="text-light-text flex items-center font-secondary font-bold text-[13px] md:text-sm lg:text-xl">
+                  <FaGripfire className="text-xl text-light-accent" />
+                  {item?.views}Views
+                </h3>
+              </div>
+              {/* article content */}
+              <div className="text-center md:text-left">
+                <h1 className=" text-xl md:text-2xl lg:text-3xl xl:text-5xl font-bold text-light-text py-2 lg:py-3">
+                  {item?.articleTitle?.split(" ").slice(0, 150).join(" ")}
+                </h1>
 
-                <h2 className="lg:text-xl font-medium inter md:font-bold">Trending</h2>
-                
-              </div> */}
-
-          <div
-          ref={(el) => (badgeRefs.current[i] = el)}
-          className="w-22 badge bg-red-600 shadow-2xl rounded-md  p-1 lg:px-3 lg:py-4 lg:w-36 text-center relative overflow-hidden"
-        >
-         
-          <h2 className="lg:text-xl font-medium inter md:font-bold text-white z-10 relative">
-            Trending
-          </h2>
-        </div>
-
-      
-
-
-
-
-
-
-
-
-
-
-
-
-              
-              <div className="crd">
-                  <div className="author-info text-gray-600 flex justify-between md:justify-between gap-3 py-2 md:py-3">
-                    <p className="md:text-xl font-medium md:font-bold">{item?.createdAt.split('T')[0]}</p>
-                    <h2 className="text-cyan-500 md:text-xl font-medium md:font-bold">By {item?.authorName}</h2>
-                  </div>
-                  <div className="imgs w-full ">
-                    <img src={item?.articlePic} className="mx-auto w-full lg:w-full shadow-xl rounded-xl h-[300px]" alt="" />
-                  </div>
-                  <div className="contents playfair-display">
-                    <h1 className="truncate md:text-2xl font-bold text-gray-900 py-2 lg:py-3">{item?.articleTitle}</h1>
-
-                    <p className="text-gray-600 font-bold md:font-medium md:text-xl line-clamp-2">{item?.descriptions}</p>
-                    {/* publsiher and view count show */}
-                    <div className="publisherviews py-3 lg:py-5 flex items-center justify-between ">
-                      <h3 className="text-[#f00] font-medium flex items-center urbanist text-[13px] md:text-sm"><FaGripfire className="text-xl text-[#f00]"/>{item?.views}Views</h3>
-                      <h3 className="text-gray-700 md:text-xl font-medium urbanist">Publisher : {item?.publisher?.label}</h3>
-                    </div>
-                  {/* tags show
-                  <div className="space-x-6 flex items-center py-6">
-                    <p className="text-cyan-500 font-bold text-2xl">Tags:</p>
-                    {
-                      item?.tags.map((tag,i)=><button
-                      key={i}
-                      className="btn btn-md btn-warning font-bold text-black"
-                      > {tag.label}</button>)
-                    }
-                  </div> */}
-                  <div className="mx-auto text-center">
-                    <Link className="mt-3 px-6 lg:px-12 py-2 lg:py-3 rounded-sm shadow-md bg-[#16b7cc] w-full md:text-xl font-bold text-white" to={`/article/${item?._id}`}>Read More</Link>
-                  </div>
-                  </div>
-                </div>
+                <p className="text-light-text/70 text-sm font-primary md:font-medium md:text-xl  xl:text-2xl lg:py-3 xl:py-4">
+                   {item?.descriptions?.split(" ").slice(0, 200).join(" ") + "..."}
+                </p>
+              </div>
+              {/* read more button */}
+              <div className="mx-auto text-center pt-5 xl:mt-6">
+                <button className="bg-light-accent text-light-text xl:py-[10px] xl:px-[30px] rounded-lg xl:text-xl whitespace-nowrap py-2 px-3  hover:bg-light-accent/60 transition duration-300 hover:scale-110 cursor-pointer font-bold">
+                  <Link to={`/article/${item?._id}`}>Read More</Link>
+                </button>
+              </div>
             </div>
           </div>
         </SwiperSlide>
-        
       ))}
     </Swiper>
   );
 };
 
 export default TrendingArticlesSlider;
+
+//
+// <div className="crd">
+//   {/* author div */}
+//   <div className="author-info text-gray-600 flex justify-between md:justify-between gap-3 py-2 md:py-3">
+//     <p className="md:text-xl font-medium md:font-bold">
+//       {item?.createdAt.split("T")[0]}
+//     </p>
+//     <div className="flex items-center gap-3 py-1">
+//       <h3 className="xl:hidden text-light-text font-bold flex items-center font-secondary text-[13px] md:text-[17px] ">
+//         <FaGripfire className="text-xl text-light-accent font-bold" />
+//         {item?.views}Views
+//       </h3>
+//       {/* author name */}
+//       <h2 className="text-light-text md:text-xl font-medium md:font-bold">
+//       By {item?.authorName}
+//     </h2>
+
+//     </div>
+//   </div>
+//   {/* author div end */}
+
+//   <div className="imgs w-full ">
+//     <img
+//       src={item?.articlePic}
+//       className="mx-auto w-full lg:w-full shadow-xl rounded-xl xl:h-[250px]"
+//       alt=""
+//     />
+//   </div>
+//   {/* image div ends article image */}
+//   {/* content div start */}
+//   <div className="contents font-secondary">
+//     <h1 className="truncate md:text-2xl font-bold text-light-text py-2 lg:py-3">
+//       {item?.articleTitle}
+//     </h1>
+
+//     <p className="text-light-text/70 font-bold md:font-medium md:text-xl line-clamp-2">
+//       {item?.descriptions}
+//     </p>
+//     {/* publsiher and view count show */}
+//     <div className="hidden publisherviews py-3 lg:py-5 cl:flex items-center justify-between ">
+//       <h3 className="text-light-text font-bold flex items-center font-secondary text-[13px] md:text-[17px] ">
+//         <FaGripfire className="text-xl text-light-accent font-bold" />
+//         {item?.views}Views
+//       </h3>
+//       <h3 className="text-light-text md:text-xl font-medium font-secondary">
+//         <span className="font-bold">Publisher</span> : {item?.publisher?.label}
+//       {/* </h3>
+//     </div>
+
+//   </div>
+// </div> */}

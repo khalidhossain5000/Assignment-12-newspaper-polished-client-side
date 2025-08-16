@@ -34,7 +34,7 @@ const Home = () => {
       <div className="relative z-0">
         <TrendingArticlesSlider />
       </div>
-      <div className="bg-[#f4f6fe]">
+      <div className="">
         <div>
           <Publishers />
           <LatestNews />
