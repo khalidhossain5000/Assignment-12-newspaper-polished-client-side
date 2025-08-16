@@ -9,6 +9,7 @@ import { useNavigate } from "react-router";
 import { ImCross } from "react-icons/im";
 
 import Modal from "react-modal";
+import NewYorkTimePopularPost from "../NewYorkTimePost/NewYorkTimePopularPost";
 Modal.setAppElement("#root");
 const Home = () => {
   const [showModal, setShowModal] = useState(false);
@@ -40,6 +41,7 @@ const Home = () => {
           <LatestNews />
           <Plans />
           <ExclusiveNews />
+          <NewYorkTimePopularPost/>
           <Statistics />
         </div>
       </div>

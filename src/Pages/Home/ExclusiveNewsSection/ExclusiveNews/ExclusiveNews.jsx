@@ -19,14 +19,14 @@ const ExclusiveNews = () => {
   const sideNews = exclusiveNews.slice(1, 5);
   if (isLoading) return <Loading />;
   return (
-    <div className="py-24 bg-[#ffffff]">
-      <h1 className="text-5xl lg:text-6xl text-center font-bold text-[#211f54]">
+    <div className="py-12 md:py-24 bg-light-secondary">
+      <h1 className="text-center text-4xl xl:text-6xl text-light-text font-bold pb-12 font-secondary">
         Exclusive News
       </h1>
 
-      <div className="flex flex-col lg:flex-row gap-6 max-w-[1500px] mx-auto my-12 lg:my-22 shadow-xl p-3 lg:p-5">
+      <div className="py-12 md:py-6 flex flex-col lg:flex-row gap-6 max-w-[1500px] mx-auto my-12 lg:my-22 shadow-xl p-3 lg:p-5">
         {/* Left Side Big Card */}
-        <div className="lg:flex-1 bg-white">
+        <div className="lg:flex-1 ">
           <ExclusiveCardBig news={mainNews} />
         </div>
 

@@ -23,48 +23,48 @@ const Statistics = () => {
   refetch();
 
   return (
-    <div className="py-14 md:py-24 bg-[#f0f2fb] ">
-      <h1 className="text-3xl md:text-6xl font-bold text-[#211f54] text-center pt-6 pb-12">
+    <div className="py-12 md:py-24 bg-light-secondary">
+      <h1 className="text-center text-4xl xl:text-6xl text-light-text font-bold pb-12 font-secondary">
         Statistics
       </h1>
-      <div className="py-12 statiscticcontainer container mx-auto md:flex items-center  gap-12 px-4 lg:px-0 space-y-6 lg:space-y-0">
-        <div className="p-3 lg:p-6 shadow-md flex-1 crd-1 bg-white border border-gray-300 rounded-xl space-y-3 lg:space-y-6">
+      <div className="py-12 md:py-20 statiscticcontainer container mx-auto md:flex items-center  gap-12 px-4 lg:px-0 space-y-6 lg:space-y-0">
+        <div className="p-3 lg:p-6 shadow-md flex-1 crd-1 bg-light-accent/90 border border-light-text/50 rounded-xl space-y-3 lg:space-y-6">
           <FiUsers
             style={{ margin: "auto" }}
             size={90}
-            className="text-[#4a3aff]"
+            className="text-light-text"
           />
-          <h2 className="text-[64px] font-extrabold text-center text-[#211f54]">
+          <h2 className="text-[64px] font-extrabold text-center text-light-text">
             <CountUp end={data?.totalUsers} enableScrollSpy={true}></CountUp>+
           </h2>
-          <h1 className="text-center text-2xl lg:text-4xl font-bold text-[#211f54]">
+          <h1 className="text-center text-2xl lg:text-4xl font-bold text-light-text">
             Total Users
           </h1>
         </div>
 
-        <div className="p-3 lg:p-6 shadow-md flex-1 crd-1 bg-white border border-gray-300 rounded-xl space-y-3 lg:space-y-6">
+        <div className="bg-light-accent/90 border border-light-text/50 p-3 lg:p-6 shadow-md flex-1 crd-1 rounded-xl space-y-3 lg:space-y-6">
           <FaUserAlt
             style={{ margin: "auto" }}
             size={90}
-            className="text-[#4a3aff]"
+            className="text-light-text"
           />
-          <h2 className="text-[64px] font-extrabold text-center text-[#211f54]">
+          <h2 className="text-[64px] font-extrabold text-center text-light-text">
             <CountUp end={data?.normalUsers} enableScrollSpy={true}></CountUp>+
           </h2>
-          <h1 className="text-center text-2xl lg:text-4xl font-bold text-[#211f54]">
+          <h1 className="text-center text-2xl lg:text-4xl font-bold text-light-text">
             Normal Users
           </h1>
         </div>
-        <div className="p-3 lg:p-6 shadow-md flex-1 crd-1 bg-white border border-gray-300 rounded-xl space-y-3 lg:space-y-6">
+        <div className="p-3 lg:p-6 shadow-md flex-1 crd-1 bg-light-accent/90 border border-light-text/50 rounded-xl space-y-3 lg:space-y-6">
           <MdWorkspacePremium
             style={{ margin: "auto" }}
             size={90}
-            className="text-[#4a3aff]"
+            className="text-light-text"
           />
-          <h2 className="text-[64px] font-extrabold text-[#211f54] text-center">
+          <h2 className="text-[64px] font-extrabold text-light-text text-center">
             <CountUp end={data?.premiumUsers} enableScrollSpy={true}></CountUp>+
           </h2>
-          <h1 className="text-center text-2xl lg:text-4xl font-bold text-[#211f54]">
+          <h1 className="text-center text-2xl lg:text-4xl font-bold text-light-text">
             Premium Users
           </h1>
         </div>

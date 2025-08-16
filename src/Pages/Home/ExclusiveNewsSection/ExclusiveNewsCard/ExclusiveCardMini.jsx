@@ -7,14 +7,14 @@ const ExclusiveCardMini = ({ news }) => {
       <div className="flex flex-col">
         <img
           src={news.articlePic}
-          className="w-full h-[200px] object-cover "
+          className="w-full h-[200px] object-cover hover:scale-95 transition-transform duration-300"
           alt={news.articleTitle}
         />
-        <p className="text-xl my-3 mt-2 font-semibold uppercase text-gray-900">
+        <p className="text-xl my-3 mt-2 font-semibold uppercase text-light-text">
           {news.publisher?.label}
         </p>
         <h3 className="font-bold text-md leading-5 mt-1">
-          <span className="bg-red-600 text-white text-md px-2 py-[1px] rounded mr-1">
+          <span className="bg-light-accent text-light-text text-md px-2 py-[1px] rounded mr-1">
             EXCLUSIVE
           </span>
           {news.articleTitle}
