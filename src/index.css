@@ -1,5 +1,61 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark;
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  /* --font-display: "Satoshi", "sans-serif";
+  --breakpoint-3xl: 120rem; */
+  --font-primary: "Raleway", "sans-serif";
+  --font-secondary: "Oswald", "sans-serif";
+
+  --color-light-primary: #FFFFFF;
+  --color-light-secondary: #FFF9F4;
+  --color-light-accent: #FFDC26;
+  --color-light-text: #111111;
+
+
+  /* FOR DARK THEME */
+  --color-dark-primary: #11ec0e;
+  --color-dark-secondary: #0a1512;
+  --color-dark-background: #000500;
+  --color-dark-text: #e7fee7;
+
+  /* ... */
+}
+
+
+a.focus{
+  /* primary-color for bg */
+  color:#000000; 
+  /* secondary */
+  color:#f8f8f8;
+  color:#eeeeee;
+  /* accent: button links  */
+  color: #dd3333;
+
+  /* paragraph  */
+  color: #444444;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* dark light mode code ends over here */
 
 a.active{
     border-bottom: 2px solid blue;

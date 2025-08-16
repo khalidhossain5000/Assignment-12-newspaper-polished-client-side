@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import NavBar from '../Pages/Shared/NavBar';
-import { Outlet, useNavigation } from 'react-router';
-import Loading from '../Pages/Shared/Loading/Loading';
-import { PropagateLoader } from 'react-spinners';
-import Footer from '../Pages/Shared/Footer/Footer';
+import React, { useEffect, useState } from "react";
+import NavBar from "../Pages/Shared/NavBar";
+import { Outlet, useNavigation } from "react-router";
+import Loading from "../Pages/Shared/Loading/Loading";
+import { PropagateLoader } from "react-spinners";
+import Footer from "../Pages/Shared/Footer/Footer";
 
 const MainLayout = () => {
-    const { state } = useNavigation();
-//INTIAL WELCOME SPINNER START
+  const { state } = useNavigation();
+  //INTIAL WELCOME SPINNER START
   const [welcomeLoader, setWelcomeLoader] = useState(true);
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -22,19 +22,17 @@ const MainLayout = () => {
       </div>
     );
   }
-    return (
-        <div>
-            <header>
-                <NavBar></NavBar>
-            </header>
-            <main>
-                {state === "loading" ? <Loading /> : <Outlet/>}
-            </main>
-            <footer>
-                <Footer/>
-            </footer>
-        </div>
-    );
+  return (
+    <div>
+      <header>
+        <NavBar></NavBar>
+      </header>
+      <main>{state === "loading" ? <Loading /> : <Outlet />}</main>
+      <footer>
+        <Footer />
+      </footer>
+    </div>
+  );
 };
 
 export default MainLayout;
