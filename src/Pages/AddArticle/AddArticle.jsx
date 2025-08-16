@@ -47,7 +47,6 @@ const AddArticle = () => {
   });
 
   const onSubmit = (data) => {
-    
     const articlesData = {
       authorName: user?.displayName,
       authorEmail: user?.email,
@@ -65,7 +64,6 @@ const AddArticle = () => {
     axiosSecure
       .post("/articles", articlesData)
       .then((res) => {
-        
         if (res.data.insertedId) {
           Swal.fire({
             title: "Article Submitted Successfully",
@@ -134,13 +132,13 @@ const AddArticle = () => {
 
   return (
     <div className="bg-[#e8efef] min-h-screen mb-6 px-3">
-      <div className="max-w-7xl w-full mx-auto py-6 lg:py-12 ">
+      <div className="container w-full mx-auto py-6 lg:py-12 ">
         <h1 className="text-center md:text-left text-5xl lg:text-6xl urbanist font-bold text-[#211f54]">
           Add Article{" "}
         </h1>
       </div>
 
-      <div className="max-w-7xl md:mx-auto bg-white w-full p-6 shadow-2xl rounded-xl ">
+      <div className="container md:mx-auto bg-white w-full p-6 shadow-2xl rounded-xl ">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="text-center">
             <h2 className="text-gray-800 py-3 text-2xl text-left md:w-9/12 mx-auto">
@@ -260,7 +258,7 @@ const AddArticle = () => {
           <div className="text-center">
             {articleSendingLoader ? (
               <div className="w-9/12 mx-auto text-3xl">
-                <FormLoading/>
+                <FormLoading />
               </div>
             ) : (
               <input

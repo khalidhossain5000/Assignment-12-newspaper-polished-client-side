@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 const ErrorPage = () => {
   return (
-    <div className="max-w-7xl lg:max-w-full lg:px-12 mx-auto min-h-screen shadow-2xl ">
+    <div className="container lg:max-w-full lg:px-12 mx-auto min-h-screen shadow-2xl ">
       <h1 className="text-3xl lg:text-7xl text-center text-[#4a3993] font-bold rancho py-6 lg:py-9">
         hey
       </h1>

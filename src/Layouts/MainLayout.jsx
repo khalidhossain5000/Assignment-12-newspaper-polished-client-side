@@ -27,7 +27,7 @@ const MainLayout = () => {
       <header>
         <NavBar></NavBar>
       </header>
-      <main>{state === "loading" ? <Loading /> : <Outlet />}</main>
+      <main className="overflow-x-hidden">{state === "loading" ? <Loading /> : <Outlet />}</main>
       <footer>
         <Footer />
       </footer>

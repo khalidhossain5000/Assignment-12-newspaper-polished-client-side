@@ -19,7 +19,7 @@ const LatestNews = () => {
   return (
     <div className="py-24 bg-[#e6ebfb]">
       <h1 className="text-5xl font-bold text-center py-12">Latest News</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 container mx-auto gap-6">
         {latestNews.map((news, i) => (
           <div
             key={i}

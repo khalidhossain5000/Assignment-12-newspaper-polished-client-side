@@ -4,12 +4,13 @@ import { Link } from "react-router";
 
 const Forbidden = () => {
   return (
-    <div className="max-w-7xl lg:max-w-full lg:px-12 mx-auto min-h-screen shadow-2xl ">
+    <div className="container lg:max-w-full lg:px-12 mx-auto min-h-screen shadow-2xl ">
       <h1 className="text-3xl lg:text-7xl text-center text-[#4a3993] font-bold rancho py-6 lg:py-9">
         Oops! You Shall Not Pass!
       </h1>
       <h1 className="text-xl py-3 lg:py-0 lg:text-xl font-bold text-center">
-        Looks like this page is more secret than your browser history. Try going back before Gandalf gets mad.
+        Looks like this page is more secret than your browser history. Try going
+        back before Gandalf gets mad.
       </h1>
       <div className="imgs text-center ">
         <img src={imgi} className="text-center mx-auto lg:w-7/12" alt="" />

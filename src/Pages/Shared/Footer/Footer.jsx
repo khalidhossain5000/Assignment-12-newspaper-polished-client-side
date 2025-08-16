@@ -26,7 +26,7 @@ const Footer = () => {
   );
   return (
     <div className="bg-[#030b13] py-12 lg:py-24">
-      <div className="max-w-7xl mx-auto">
+      <div className="container mx-auto">
         <div className="logos border-b-1 border-b-gray-300 pb-6">
           <img src={footerlogo} className="max-w-64 md:w-64 mx-auto" alt="" />
         </div>

@@ -27,7 +27,7 @@ import FormLoading from "../../../Shared/Loading/FormLoading";
 const UpdateMyArticle = () => {
   const [articlePic, setArticlePic] = useState("");
   const [previewUrl, setPreviewUrl] = useState(null);
-  const [updateLoading,setUpdateLoading]=useState(false)
+  const [updateLoading, setUpdateLoading] = useState(false);
   const axiosSecure = useAxiosSecure();
   const { user } = useAuth();
 
@@ -51,7 +51,7 @@ const UpdateMyArticle = () => {
     register,
     handleSubmit,
     control,
-    setValue
+    setValue,
     // formState: { errors },
   } = useForm({
     defaultValues: {
@@ -59,7 +59,6 @@ const UpdateMyArticle = () => {
       tags: [],
     },
   });
- 
 
   // Fetch article data
   const { data: article, isPending: articleLoading } = useQuery({
@@ -70,59 +69,47 @@ const UpdateMyArticle = () => {
     },
   });
 
+  useEffect(() => {
+    if (article?.tags && article.tags.length > 0) {
+      setValue("tags", article.tags);
+    }
+  }, [article, setValue]);
 
-
-
-   useEffect(() => {
-  if (article?.tags && article.tags.length > 0) {
-    setValue("tags", article.tags);
-  }
-}, [article, setValue]);
-
-useEffect(() => {
-  if (article?.publisher) {
-    setValue('publisher', article.publisher);
-  }
-}, [article, setValue]);
+  useEffect(() => {
+    if (article?.publisher) {
+      setValue("publisher", article.publisher);
+    }
+  }, [article, setValue]);
 
   if (articleLoading) return <Loading />;
 
-
-
-
-
-
-
-
-  
   const onSubmit = (data) => {
-    
     const updatedArticleData = {
       ...data,
       articlePic,
       createdAt: new Date().toISOString(),
     };
-setUpdateLoading(true)
+    setUpdateLoading(true);
     //SENDING DATA TO DB
     axiosSecure
       .patch(`/articles/update/${id}`, updatedArticleData)
       .then((res) => {
-        
         if (res) {
-           toast.success(`Article Updated SuccessFully`, {
-          className: "w-[300px] h-[100px] text-xl font-bold ",
-          removeDelay: 1000,
-          iconTheme: {
-            primary: "#16061e",
-            secondary: "#ef54e2",
-          },
-          style: {
-            border: "1px solid #08086c",
-            color: "white",
-            backgroundImage: "linear-gradient(to bottom right, #050342,#01c3f4 )"
-          },
-        });
-          setUpdateLoading(false)
+          toast.success(`Article Updated SuccessFully`, {
+            className: "w-[300px] h-[100px] text-xl font-bold ",
+            removeDelay: 1000,
+            iconTheme: {
+              primary: "#16061e",
+              secondary: "#ef54e2",
+            },
+            style: {
+              border: "1px solid #08086c",
+              color: "white",
+              backgroundImage:
+                "linear-gradient(to bottom right, #050342,#01c3f4 )",
+            },
+          });
+          setUpdateLoading(false);
         }
       })
       .catch((error) => {
@@ -155,7 +142,7 @@ setUpdateLoading(true)
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="max-w-7xl mx-auto py-12 lg:py-24 bg-white shadow-xl px-6 lg:px-14"
+        className="container mx-auto py-12 lg:py-24 bg-white shadow-xl px-6 lg:px-14"
       >
         <div className="text-center">
           <h2 className="text-gray-800 py-3 text-2xl text-left md:w-9/12 mx-auto">
@@ -174,9 +161,12 @@ setUpdateLoading(true)
         </div>
         {/* image */}
         <div>
-          <label htmlFor="image" className="w-9/12 mx-auto text-left block text-gray-800 py-3 text-xl">
-              Select Updated  Image:
-            </label>
+          <label
+            htmlFor="image"
+            className="w-9/12 mx-auto text-left block text-gray-800 py-3 text-xl"
+          >
+            Select Updated Image:
+          </label>
           {/* <input
             onChange={handleImageUpload}
             className="bg-gray-200 cursor-pointer"
@@ -242,7 +232,10 @@ setUpdateLoading(true)
         />
         {/* PUBLISHER DATA */}
         {/* Publisher field */}
-        <label style={{ display: "block", marginBottom: "5px" }} className="block text-gray-800 py-3 text-xl md:w-9/12 mx-auto">
+        <label
+          style={{ display: "block", marginBottom: "5px" }}
+          className="block text-gray-800 py-3 text-xl md:w-9/12 mx-auto"
+        >
           Publisher
         </label>
         <Controller
@@ -263,20 +256,17 @@ setUpdateLoading(true)
           )}
         />
 
-           <div className="mx-auto text-center">
-            <label
-            
-            className="block text-gray-800 py-3 text-xl w-full md:w-9/12 text-left mx-auto"
-          >
+        <div className="mx-auto text-center">
+          <label className="block text-gray-800 py-3 text-xl w-full md:w-9/12 text-left mx-auto">
             Descriptions
           </label>
-        <textarea
-          rows={3}
-          cols={40}
-          className="border w-full md:w-9/12 rounded-xl shadow-sm my-3 p-6 mx-auto"
-          defaultValue={article?.descriptions}
-          {...register("descriptions")}
-        />
+          <textarea
+            rows={3}
+            cols={40}
+            className="border w-full md:w-9/12 rounded-xl shadow-sm my-3 p-6 mx-auto"
+            defaultValue={article?.descriptions}
+            {...register("descriptions")}
+          />
         </div>
         {/* <input
           className="btn btn-warning font-bold block cursor-pointer"
@@ -284,16 +274,18 @@ setUpdateLoading(true)
           defaultValue="SubmitandUpdate"
         /> */}
         <div className="text-center">
-            {
-              updateLoading ? <div className="w-9/12 mx-auto text-3xl">
-                
-                <FormLoading/>
-              
-              </div>: <input className="mt-3 px-6 lg:px-12 py-2 lg:py-3 rounded-sm shadow-md bg-[#16b7cc] w-full md:text-xl font-bold text-white cursor-pointer lg:w-9/12 mx-auto" type="submit" value="Update Article"/>
-            }
-            
-
-          </div>
+          {updateLoading ? (
+            <div className="w-9/12 mx-auto text-3xl">
+              <FormLoading />
+            </div>
+          ) : (
+            <input
+              className="mt-3 px-6 lg:px-12 py-2 lg:py-3 rounded-sm shadow-md bg-[#16b7cc] w-full md:text-xl font-bold text-white cursor-pointer lg:w-9/12 mx-auto"
+              type="submit"
+              value="Update Article"
+            />
+          )}
+        </div>
       </form>
     </div>
   );

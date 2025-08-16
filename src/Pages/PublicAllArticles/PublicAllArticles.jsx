@@ -9,15 +9,13 @@ import ArticelsCard from "./ArticelsCard";
 import useAxios from "../../Hooks/useAxios";
 
 const PublicAllArticles = () => {
-  
   const { user } = useAuth();
   const [searchText, setSearchText] = useState("");
   const [selectedPublisher, setSelectedPublisher] = useState("");
   const [selectedTags, setSelectedTags] = useState([]);
   const inputRef = useRef(null);
 
-  const axiosInstance=useAxios()
-
+  const axiosInstance = useAxios();
 
   const customStyles = {
     control: (provided, state) => ({
@@ -64,22 +62,14 @@ const PublicAllArticles = () => {
     label: pub.publisherName,
   }));
 
-console.log(publisherOptions,"thi sis options of the publisher");
+  console.log(publisherOptions, "thi sis options of the publisher");
 
   const publisherValue = selectedPublisher?.value || "";
   const tagsValue = selectedTags.map((tag) => tag.value).join(",");
-  
 
-  
   //ARTICLES DATA LOADING IS RELATED ---->
   const { data: atricles = [], isLoading } = useQuery({
-    queryKey: [
-      "articles",
-      searchText,
-      selectedPublisher,
-      selectedTags,
-      
-    ],
+    queryKey: ["articles", searchText, selectedPublisher, selectedTags],
     queryFn: async () => {
       const res = await axiosInstance.get("/articles/approved", {
         params: {
@@ -91,7 +81,7 @@ console.log(publisherOptions,"thi sis options of the publisher");
       return res.data;
     },
   });
-  
+
   useEffect(() => {
     inputRef.current?.focus();
   });
@@ -152,7 +142,7 @@ console.log(publisherOptions,"thi sis options of the publisher");
           No articles found matching your search/filter.
         </p>
       ) : (
-        <div className=" grid grid-cols-1 md:grid-cols- lg:grid-cols-4 lg:max-w-full max-w-7xl lg:px-22 px-3 mx-auto py-24 gap-6">
+        <div className=" grid grid-cols-1 md:grid-cols- lg:grid-cols-4 lg:max-w-full container lg:px-22 px-3 mx-auto py-24 gap-6">
           {atricles.map((article) => (
             <ArticelsCard key={article._id} article={article}></ArticelsCard>
           ))}

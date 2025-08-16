@@ -25,7 +25,6 @@ const AllUsers = () => {
   });
   const totalPages = Math.ceil(data.total / limit);
   const handleMakeAdmin = async (id) => {
-    
     try {
       await axiosSecure.patch(`/users/admin/${id}`);
       refetch();
@@ -47,7 +46,7 @@ const AllUsers = () => {
         <div className="absolute top-0 right-0 w-32 h-32 bg-[#211F54] opacity-10 rounded-full transform translate-x-1/3 -translate-y-1/3"></div>
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#211F54] opacity-10 rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
       </div>
-      <div className="overflow-x-auto rounded-box border border-gray-500 p-6 bg-white max-w-7xl mx-auto mt-6 lg:mt-12">
+      <div className="overflow-x-auto rounded-box border border-gray-500 p-6 bg-white container mx-auto mt-6 lg:mt-12">
         <table className="table">
           {/* head */}
           <thead>

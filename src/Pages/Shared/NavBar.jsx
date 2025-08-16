@@ -98,15 +98,16 @@ const NavBar = () => {
     <div
       className={`py-2 transition-all duration-300 ${
         isSticky
-          ? "fixed top-0 left-0 w-full bg-light-accent/50 shadow-md backdrop-blur z-50"
-          : "bg-light-accent/5"
+          ? "fixed top-0 left-0 w-full bg-light-primary/50 shadow-md backdrop-blur z-50"
+          : "bg-light-accent/5 py-3 lg:py-4 xl:py-5"
       }`}
     >
+
       <div className="container mx-auto ">
         <div className="hidden lg:flex items-center justify-between">
           {/* logo of the site */}
           <div>
-            <img className="w-[150px]" src={blackLogo} alt="" />
+            <img className="w-[150px] md:max-w-40" src={blackLogo} alt="" />
           </div>
           {/* nav links */}
           <div className="links">

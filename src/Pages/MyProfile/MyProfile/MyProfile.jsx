@@ -15,13 +15,13 @@ const MyProfile = () => {
     },
   });
   //   const isPremiumUser=currentUserFromDbData?.premiumInfo
-  
-  if (isLoading) return <Loading />
+
+  if (isLoading) return <Loading />;
   return (
     <div className="w-full mx-auto bg-[#e4ebeb] rounded-2xl shadow-2xl pb-12">
       <div className="relative z-10 bg-[url('assets/background/another-bg.jpg')] bg-no-repeat bg-cover h-[200px] md:h-[500px] bg-top-right"></div>
 
-      <div className="info bg-white max-w-7xl shadow-2xl rounded-2xl mx-auto  relative p-6 pb-12 lg:pb-20 lg:px-12">
+      <div className="info bg-white container shadow-2xl rounded-2xl mx-auto  relative p-6 pb-12 lg:pb-20 lg:px-12">
         <div className="imgname flex flex-col lg:flex-row items-center gap-6">
           <img
             src={user?.photoURL}
@@ -38,7 +38,6 @@ const MyProfile = () => {
           </div>
         </div>
 
-        
         <div className="mt-12 space-y-2 bg-white/90 p-5 rounded-xl shadow-sm border border-gray-200 flex flex-col lg:flex-row items-center justify-around">
           <h2 className="text-lg lg:text-xl font-semibold text-[#211f54] tracking-wide">
             Role:{" "}
