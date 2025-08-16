@@ -10,6 +10,7 @@ import { ImCross } from "react-icons/im";
 
 import Modal from "react-modal";
 import NewYorkTimePopularPost from "../NewYorkTimePost/NewYorkTimePopularPost";
+import SubscribeNewsLetter from "../SubscribeNewsLetter/SubscribeNewsLetter";
 Modal.setAppElement("#root");
 const Home = () => {
   const [showModal, setShowModal] = useState(false);
@@ -43,6 +44,7 @@ const Home = () => {
           <ExclusiveNews />
           <NewYorkTimePopularPost/>
           <Statistics />
+          <SubscribeNewsLetter/>
         </div>
       </div>
 

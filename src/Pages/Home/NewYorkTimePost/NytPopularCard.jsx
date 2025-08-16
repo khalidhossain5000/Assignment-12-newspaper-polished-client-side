@@ -7,17 +7,17 @@ const NytPopularCard = ({ popularPost }) => {
   const { articlePic, articleTitle, createdAt, views, descriptions,_id } =
     popularPost;
   return (
-    <div className="flex flex-col md:flex-row bg-light-secondary gap-6 ">
-      <div className="w-full">
+    <div className="flex flex-col xl:flex-row bg-light-secondary gap-6 ">
+      <div className="w-full h-full flex-1">
         <img
           src={articlePic}
-          className="w-full h-full rounded-xl shadow-xl"
+          className="w-full h-full rounded-xl "
           alt=""
         />
       </div>
-      <div className="cntents py-6">
+      <div className="cntents px-3 py-6 xl:py-6 flex-1 ">
         {/* views and date */}
-        <div className="flex items-center justify-between  ">
+        <div className="flex  justify-between  ">
           <p className="text-light-text/60 font-bold">
             {new Date(createdAt).toLocaleDateString("en-US", {
               month: "short",
@@ -25,7 +25,7 @@ const NytPopularCard = ({ popularPost }) => {
               year: "numeric",
             })}
           </p>
-          <p className="flex items-center gap-3 pr-2">
+          <p className="flex  gap-3 pr-2">
             <IoStatsChartSharp className="text-[16px] md:text-xl text-light-accent" />
             <span className="font-secondary text-light-text/60 font-bold">
               {views} Views
@@ -34,9 +34,9 @@ const NytPopularCard = ({ popularPost }) => {
         </div>
 
         {/* title and des */}
-        <div className="py-2 flex flex-col h-full">
-          <h2 className="text-light-text text-xl font-bold ">{articleTitle}</h2>
-          <p className="pt-3 text-light-text/80">
+        <div className="py-2 flex flex-col h-full md:text-left text-center font-secondary">
+          <h2 className="text-light-text lg:text-xl font-bold ">{articleTitle}</h2>
+          <p className="pt-3 text-light-text/80 text-[14px]">
             {descriptions.split(" ").slice(0, 20).join(" ") +
               (descriptions.split(" ").length > 20 ? "..." : "")}
           </p>
