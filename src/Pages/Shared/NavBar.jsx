@@ -27,7 +27,23 @@ const NavBar = () => {
   // theme toggle part ends here
 
 
+  // sticky code statd
+  const [isSticky, setIsSticky] = useState(false);
+  useEffect(() => {
+    // handler: set sticky if scrolled more than 50px
+    const onScroll = () => {
+      setIsSticky(window.scrollY > 50);
+    };
 
+    // use passive listener for better scroll performance
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    // run once to set initial state (if page opened not at top)
+    onScroll();
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  // sticky code ends
 
 
 
@@ -92,7 +108,11 @@ const NavBar = () => {
   );
 
   return (
-    <div className="py-2 bg-light-accent/5">
+    <div   className={`py-2 transition-all duration-300 ${
+    isSticky
+      ? "fixed top-0 left-0 w-full bg-light-accent/50 shadow-md backdrop-blur z-50"
+      : "bg-light-accent/5"
+  }`}>
 
       <div className="container mx-auto ">
         <div className="hidden lg:flex items-center justify-between">
