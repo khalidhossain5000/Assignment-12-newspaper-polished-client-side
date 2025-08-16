@@ -147,7 +147,7 @@ const NavBar = () => {
               <NavLink to="/my-profile">
                 <img
                   src={user?.photoURL}
-                  className="w-12 xl:w-14 xl::h-14 h-12 rounded-full"
+                  className="w-12 xl:w-14 xl::h-14 h-12 rounded-full border-1 border-light-accent"
                   alt=""
                 />
               </NavLink>
@@ -163,14 +163,14 @@ const NavBar = () => {
             <div className="flex flex-col md:flex-row md:items-center gap-6">
               <Link
                 to="/auth/login"
-                className="px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-semibold shadow-lg hover:brightness-110 transition duration-300"
+                className="border-2 border-light-accent hover:bg-light-accent/90 transition duration-300 hover:scale-110 text-light-text xl:py-[10px] xl:px-[30px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3"
               >
                 Login
               </Link>
 
               <Link
                 to="/auth/register"
-                className="px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-semibold shadow-lg hover:brightness-110 transition duration-300"
+                className="bg-light-accent text-light-text xl:py-[10px] xl:px-[30px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3 hover:bg-light-accent/60 transition duration-300 hover:scale-110"
               >
                 Register
               </Link>
