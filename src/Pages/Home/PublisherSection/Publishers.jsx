@@ -35,9 +35,9 @@ const Publishers = () => {
   if (isPending) return <Loading/>
   return (
     <div className="py-12 md:py-24 relative z-0 font-secondary">
-      <h2 className="text-center text-2xl md:text-3xl lg:text-4xl xl:text-6xl text-light-text font-bold py-12 font-secondary">All Publishers</h2>
+      <h2 className="text-center text-2xl md:text-3xl lg:text-4xl xl:text-6xl text-light-text font-bold pb-12 font-secondary">All Publishers</h2>
 
-      <div className="my-8 px-4" >
+      <div className="py-9 px-4 lg:px-0" >
         <Swiper
           modules={[Autoplay]}
           spaceBetween={20}
@@ -63,7 +63,7 @@ const Publishers = () => {
                   alt={publisher.name}
                   className="w-20 h-20 object-contain"
                 />
-                <h2 className="text-center font-semibold font-secondary md:text-xl xl:text-2xl pt-3 lg:pt-6 lg:font-bold">
+                <h2 className="text-center font-semibold font-secondary md:text-xl xl:text-2xl pt-3 lg:pt-6 lg:font-bold whitespace-nowrap">
                   {publisher?.publisherName}
                 </h2>
               </div>
