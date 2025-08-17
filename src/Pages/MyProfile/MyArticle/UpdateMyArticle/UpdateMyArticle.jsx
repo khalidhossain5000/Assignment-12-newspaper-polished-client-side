@@ -135,21 +135,27 @@ const UpdateMyArticle = () => {
 
   return (
     <div className="">
-      <div className="py-24 bg-gradient-to-tr from-[#7e7dfd] via-white to-[#ffcfff]">
-        <h1 className="text-center text-3xl font-bold inter  py-6">
-          Update Article
-        </h1>
+     <div className="w-full h-64 md:h-80 bg-gradient-to-tr from-light-text/5 via-light-primary to-light-secondary flex items-center justify-center relative overflow-hidden">
+        <div className="text-center px-4">
+          <h1 className="text-light-text font-secondary text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
+            Update Article
+          </h1>
+          
+        </div>
+        {/* Subtle overlay shapes in primary text color */}
+        <div className="absolute top-0 right-0 w-32 h-32 bg-[#211F54] opacity-10 rounded-full transform translate-x-1/3 -translate-y-1/3"></div>
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#211F54] opacity-10 rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="container mx-auto py-12 lg:py-24 bg-white shadow-xl px-6 lg:px-14"
+        className="container mx-auto py-12 lg:py-24 bg-light-primary shadow-xl px-6 lg:px-14"
       >
-        <div className="text-center">
-          <h2 className="text-gray-800 py-3 text-2xl text-left md:w-9/12 mx-auto">
+        <div className="text-center font-secondary">
+          <h2 className="text-light-text py-3 text-2xl text-left md:w-9/12 mx-auto">
             Add Article
           </h2>
           <input
-            className="mx-auto border border-gray-500 w-full md:w-9/12 p-2 rounded-md placeholder:text-[#211f54] focus:outline-none
+            className="mx-auto border border-light-text-60 w-full md:w-9/12 p-2 rounded-md placeholder:text-light-text focus:outline-none
              focus:ring-0
              focus:shadow-[0_0_0_4px_rgba(33,31,84,0.2)]
              transition duration-300"
@@ -163,21 +169,14 @@ const UpdateMyArticle = () => {
         <div>
           <label
             htmlFor="image"
-            className="w-9/12 mx-auto text-left block text-gray-800 py-3 text-xl"
+            className="w-9/12 mx-auto text-left block text-light-text py-3 text-xl font-secondary"
           >
             Select Updated Image:
           </label>
-          {/* <input
-            onChange={handleImageUpload}
-            className="bg-gray-200 cursor-pointer"
-            type="file"
-            id="image"
-            name="image"
-            accept="image/*"
-          /> */}
+         
 
-          <div className="mx-auto border border-gray-600 p-6 md:w-9/12 my-2 rounded-xl shadow-md">
-            <label htmlFor="image" className="block text-gray-800 py-3 text-xl">
+          <div className="mx-auto border border-light-text/60 p-6 md:w-9/12 my-2 rounded-xl shadow-md font-secondary">
+            <label htmlFor="image" className="block text-light-text py-3 text-xl">
               Select Updated Image:
             </label>
             {previewUrl && (
@@ -189,7 +188,7 @@ const UpdateMyArticle = () => {
             )}
             <label
               htmlFor="image"
-              className="mx-auto flex items-center gap-3 px-4 py-2 bg-gray-100 text-gray-700 border border-gray-300 rounded-md cursor-pointer hover:bg-gray-200 transition"
+              className="mx-auto flex items-center gap-3 px-4 py-2 bg-gray-100 text-light-text border border-light-text/60 rounded-md cursor-pointer hover:bg-gray-200 transition font-secondary"
             >
               <FiUpload className="text-xl" />
               <span>Choose Image</span>
@@ -209,7 +208,7 @@ const UpdateMyArticle = () => {
         {/* Tags field */}
         <label
           style={{ display: "block", marginTop: "20px", marginBottom: "5px" }}
-          className="block text-gray-800 py-3 text-xl md:w-9/12 mx-auto"
+          className="block text-light-text py-3 text-xl md:w-9/12 mx-auto"
         >
           Tags
         </label>
@@ -234,7 +233,7 @@ const UpdateMyArticle = () => {
         {/* Publisher field */}
         <label
           style={{ display: "block", marginBottom: "5px" }}
-          className="block text-gray-800 py-3 text-xl md:w-9/12 mx-auto"
+          className="block text-light-text py-3 text-xl md:w-9/12 mx-auto"
         >
           Publisher
         </label>
@@ -249,7 +248,7 @@ const UpdateMyArticle = () => {
               onChange={(selectedOption) => field.onChange(selectedOption)}
               value={field.value}
               isLoading={isLoading}
-              className="border border-gray-100 w-full md:w-9/12  mx-auto p-2 rounded-md placeholder:text-[#211f54] focus:outline-none focus:ring-0
+              className="border border-gray-100 w-full md:w-9/12  mx-auto p-2 rounded-md placeholder:text-light-text focus:outline-none focus:ring-0
              focus:shadow-[0_0_0_4px_rgba(33,31,84,0.2)]
              transition duration-300"
             />
@@ -257,7 +256,7 @@ const UpdateMyArticle = () => {
         />
 
         <div className="mx-auto text-center">
-          <label className="block text-gray-800 py-3 text-xl w-full md:w-9/12 text-left mx-auto">
+          <label className="block text-light-text py-3 text-xl w-full md:w-9/12 text-left mx-auto">
             Descriptions
           </label>
           <textarea
@@ -280,7 +279,7 @@ const UpdateMyArticle = () => {
             </div>
           ) : (
             <input
-              className="mt-3 px-6 lg:px-12 py-2 lg:py-3 rounded-sm shadow-md bg-[#16b7cc] w-full md:text-xl font-bold text-white cursor-pointer lg:w-9/12 mx-auto"
+             className="bg-light-accent text-light-text xl:py-[5px] xl:px-[20px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3 py-1 px-2 hover:bg-light-accent/60 transition duration-300 hover:scale-110 w-9/12 font-secondary font-bold mx-auto cursor-pointer"
               type="submit"
               value="Update Article"
             />
