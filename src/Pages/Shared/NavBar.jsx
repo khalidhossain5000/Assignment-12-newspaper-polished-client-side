@@ -5,6 +5,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import useRole from "../../Hooks/useRole";
 import Swal from "sweetalert2";
 import blackLogo from "../../assets/logo/new-black-logo.png";
+import darklogo from "../../assets/logo/footer-logo.webp"
 const NavBar = () => {
   const { user, logOut } = useAuth();
   const { role, roleLoading } = useRole();
@@ -98,8 +99,8 @@ const NavBar = () => {
     <div
       className={`py-2 transition-all duration-300 ${
         isSticky
-          ? "fixed top-0 left-0 w-full bg-light-primary/50 shadow-md backdrop-blur z-50"
-          : "bg-light-accent/5 py-3 lg:py-4 xl:py-5"
+          ? "fixed top-0 left-0 w-full bg-light-primary/50 dark:bg-dark-primary/50  shadow-md backdrop-blur z-50"
+          : "bg-light-accent/5 dark:bg-gradient-to-r dark:bg-dark-primary/30 py-3 lg:py-4 xl:py-5"
       }`}
     >
 
@@ -107,11 +108,12 @@ const NavBar = () => {
         <div className="hidden lg:flex items-center justify-between">
           {/* logo of the site */}
           <div>
-            <img className="w-[150px] md:max-w-40" src={blackLogo} alt="" />
+            <Link to='/'><img className="w-[150px] md:max-w-40 dark:hidden" src={blackLogo} alt="" /></Link>
+            <Link to='/'><img className="w-[150px] md:max-w-40 hidden dark:block" src={darklogo} alt="" /></Link>
           </div>
           {/* nav links */}
           <div className="links">
-            <ul className="flex items-center gap-3  text-[17px] font-semibold text-light-text font-primary whitespace-nowrap lg:px-1">
+            <ul className="flex items-center gap-3  text-[17px] font-semibold text-light-text dark:text-dark-text font-primary whitespace-nowrap lg:px-1">
               {links}
             </ul>
           </div>
@@ -171,7 +173,7 @@ const NavBar = () => {
               <div className="flex flex-col md:flex-row md:items-center gap-6">
                 <Link
                   to="/auth/login"
-                  className="border-2 border-light-accent hover:bg-light-accent/90 transition duration-300 hover:scale-110 text-light-text xl:py-[10px] xl:px-[30px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3"
+                  className="border-2 border-light-accent hover:bg-light-accent/90 transition duration-300 hover:scale-110 text-light-text dark:text-dark-text xl:py-[10px] xl:px-[30px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3"
                 >
                   Login
                 </Link>

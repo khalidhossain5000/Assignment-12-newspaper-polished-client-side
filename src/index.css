@@ -18,10 +18,10 @@
 
 
   /* FOR DARK THEME */
-  --color-dark-primary: #11ec0e;
-  --color-dark-secondary: #0a1512;
-  --color-dark-background: #000500;
-  --color-dark-text: #e7fee7;
+  --color-dark-primary: #030014;
+  --color-dark-secondary: #12023B;
+  --color-dark-accent: #FFDC26;
+  --color-dark-text: #ffffff;
 
   /* ... */
 }
