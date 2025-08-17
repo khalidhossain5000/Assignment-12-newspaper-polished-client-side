@@ -7,8 +7,8 @@ const NytPopularCard = ({ popularPost }) => {
   const { articlePic, articleTitle, createdAt, views, descriptions,_id } =
     popularPost;
   return (
-    <div className="flex flex-col xl:flex-row bg-light-secondary gap-6 ">
-      <div className="w-full h-full flex-1">
+    <div className="flex flex-col xl:flex-row dark:rounded-xl bg-light-secondary dark:bg-dark-accent/90 gap-6 ">
+      <div className="w-full h-full flex-1 ">
         <img
           src={articlePic}
           className="w-full h-full rounded-xl "

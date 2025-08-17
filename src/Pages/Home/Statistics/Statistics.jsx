@@ -23,8 +23,8 @@ const Statistics = () => {
   refetch();
 
   return (
-    <div className="py-12 md:py-24 bg-light-secondary">
-      <h1 className="text-center text-4xl xl:text-6xl text-light-text font-bold pb-12 font-secondary">
+    <div className="py-12 md:py-24 bg-light-secondary dark:bg-dark-primary">
+      <h1 className="text-center text-4xl xl:text-6xl text-light-text dark:text-dark-text font-bold pb-12 font-secondary">
         Statistics
       </h1>
       <div className="py-12 md:py-20 container mx-auto lg:flex flex-col lg:flex-row items-center  gap-12 px-4 lg:px-0 space-y-6 lg:space-y-0">
@@ -32,7 +32,7 @@ const Statistics = () => {
           <FiUsers
             style={{ margin: "auto" }}
             size={90}
-            className="text-light-text"
+            className="text-light-text dark:text-dark-secondary"
           />
           <h2 className="text-[64px] font-extrabold text-center text-light-text">
             <CountUp end={data?.totalUsers} enableScrollSpy={true}></CountUp>+
@@ -46,7 +46,7 @@ const Statistics = () => {
           <FaUserAlt
             style={{ margin: "auto" }}
             size={90}
-            className="text-light-text"
+            className="text-light-text dark:text-dark-secondary "
           />
           <h2 className="text-[64px] font-extrabold text-center text-light-text">
             <CountUp end={data?.normalUsers} enableScrollSpy={true}></CountUp>+
@@ -60,7 +60,7 @@ const Statistics = () => {
           <MdWorkspacePremium
             style={{ margin: "auto" }}
             size={90}
-            className="text-light-text"
+            className="text-light-text dark:text-dark-secondary"
           />
           <h2 className="text-[64px] font-extrabold text-light-text text-center">
             <CountUp end={data?.premiumUsers} enableScrollSpy={true}></CountUp>+

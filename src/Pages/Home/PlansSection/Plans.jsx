@@ -7,11 +7,11 @@ import { Typewriter } from "react-simple-typewriter";
 
 const Plans = () => {
   return (
-    <div className="py-14 lg:py-24 flex justify-center items-center">
+    <div className="py-14 lg:py-24 flex justify-center items-center dark:bg-dark-primary">
       <div className="">
         <div className="text-center font-semibold py-3 lg:py-12">
-          <h1 className="text-4xl md:text-5xl font-secondary">
-            <span className="text-light-text font-bold  tracking-wide">
+          <h1 className="text-4xl md:text-5xl font-secondary ">
+            <span className="text-light-text dark:text-dark-text font-bold  tracking-wide">
               <Typewriter
                 loop={5}
                 cursor
@@ -24,7 +24,7 @@ const Plans = () => {
             </span>
             <span>Plans</span>
           </h1>
-          <p className="pt-4 md:pt-6 md:text-xl text-light-text/50 font-normal w-full md:px-8 md:w-full">
+          <p className="pt-4 md:pt-6 md:text-xl text-light-text/50 dark:text-dark-text font-normal w-full md:px-8 md:w-full">
             Choose a plan that works best for you.
           </p>
         </div>
@@ -32,7 +32,7 @@ const Plans = () => {
 
 
           {/* <!-- Basic Card --> */}
-          <div className="max-w-2xl lg:w-[490px] p-3 xl:p-9 bg-light-accent/30 text-center rounded-xl lg:rounded-3xl lg:px-16 shadow-xl">
+          <div className="max-w-2xl lg:w-[490px] p-3 xl:p-9 bg-light-accent/30 dark:bg-dark-accent/80 text-center rounded-xl lg:rounded-3xl lg:px-16 shadow-xl">
             <h2 className="text-light-text text-2xl lg:text-3xl font-bold">
               Basic Plan - “News Lite”
             </h2>
@@ -153,7 +153,7 @@ const Plans = () => {
           </div>
 
           {/* enter prise card */}
-          <div className="max-w-2xl lg:w-[490px] p-3 xl:p-9 bg-light-accent/30 text-center rounded-xl lg:rounded-3xl lg:px-16 shadow-xl">
+          <div className="max-w-2xl lg:w-[490px] p-3 xl:p-9 bg-light-accent/30 dark:bg-dark-accent/80 text-center rounded-xl lg:rounded-3xl lg:px-16 shadow-xl">
             <h2 className="text-light-text text-2xl lg:text-3xl font-bold">
               Premium Plan – “Pro Reader”
             </h2>

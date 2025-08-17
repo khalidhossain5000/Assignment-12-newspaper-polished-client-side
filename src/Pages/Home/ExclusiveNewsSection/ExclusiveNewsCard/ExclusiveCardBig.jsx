@@ -8,9 +8,9 @@ const ExclusiveCardBig = ({ news }) => {
       <img
         src={news.articlePic}
         alt={news.articleTitle}
-        className="w-full lg:h-[690px] object-cover hover:scale-95 transition-transform duration-300"
+        className="w-full lg:h-[690px] object-cover hover:scale-95 transition-transform duration-300 dark:rounded-b-lg"
       />
-      <div className="absolute bottom-0 left-0 bg-gradient-to-t from-black to-transparent p-6 rounded-b-lg w-full ">
+      <div className="absolute bottom-0 left-0 bg-gradient-to-t from-black to-transparent p-6 rounded-b-lg  w-full ">
         <span className="bg-light-accent text-light-text text-xs md:text-xl px-2 py-1 rounded font-bold">
           EXCLUSIVE
         </span>

@@ -19,8 +19,8 @@ const ExclusiveNews = () => {
   const sideNews = exclusiveNews.slice(1, 5);
   if (isLoading) return <Loading />;
   return (
-    <div className="py-12 md:py-24 bg-light-secondary">
-      <h1 className="text-center text-4xl xl:text-6xl text-light-text font-bold pb-12 font-secondary">
+    <div className="py-12 md:py-24 bg-light-secondary dark:bg-gradient-to-b dark:from-dark-primary dark:to-dark-secondary">
+      <h1 className="text-center text-4xl xl:text-6xl text-light-text dark:text-dark-text font-bold pb-12 font-secondary">
         Exclusive News
       </h1>
 

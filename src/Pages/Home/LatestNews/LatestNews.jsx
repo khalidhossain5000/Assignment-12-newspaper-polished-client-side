@@ -17,8 +17,8 @@ const LatestNews = () => {
   if (isLoading) return <Loading />;
 
   return (
-    <div className="py-12 md:py-24 bg-light-secondary">
-      <h1 className="text-center text-4xl xl:text-6xl text-light-text font-bold pb-12 font-secondary">
+    <div className="py-12 md:py-24 bg-light-secondary dark:bg-gradient-to-b dark:from-dark-primary dark:to-dark-secondary">
+      <h1 className="text-center text-4xl xl:text-6xl text-light-text font-bold pb-12 font-secondary dark:text-dark-text">
         Latest News
       </h1>
 
@@ -27,7 +27,7 @@ const LatestNews = () => {
           {latestNews.map((news, i) => (
             <div key={i} className="">
 
-              <div className="bg-light-accent/50 rounded-lg overflow-hidden h-full flex flex-col">
+              <div className="bg-light-accent/50 dark:bg-dark-accent/90 rounded-lg overflow-hidden h-full flex flex-col">
                 <div>
                   <img
                   src={news.articlePic}
@@ -35,7 +35,7 @@ const LatestNews = () => {
                   className="w-full h-48 object-cover rounded-t-lg"
                 />
                 </div>
-                <div className="p-4 text-light-text text-center lg:text-left">
+                <div className="p-4 text-light-text text-center lg:text-left ">
                  
                     <h3 className="text-xl font-bold mb-2">
                       {news.articleTitle}
