@@ -40,11 +40,11 @@ const MyArticleNav = () => {
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#211F54] opacity-10 rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
       </div>
 
-      <div className="py-12 lg:py-24 container mx-auto ">
-        <div className="overflow-x-auto rounded-box border border-light-text/50 shadow-xl container mx-auto mt-6 lg:mt-12">
+      <div className="py-12 lg:py-24 container mx-auto px-3 xl:px-0">
+        <div className="overflow-x-auto rounded-box border border-light-text/50 shadow-xl container mx-auto mt-6 lg:mt-12 ">
           <table className="table">
             {/* head */}
-            <thead className="bg-light-text/60">
+            <thead className="bg-light-text/60 ">
               <tr className="text-xl text-light-primary font-secondary border-b border-b-light-text ">
                 <th>#</th>
                 <th>Article Title</th>

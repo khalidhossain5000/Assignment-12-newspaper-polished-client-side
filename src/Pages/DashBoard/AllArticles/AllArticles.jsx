@@ -218,11 +218,12 @@ const AllArticles = () => {
 
   return (
     <div>
-      <div className="px-12 w-full lg:w-11/12 mx-auto rounded-2xl shadow-xl h-48 bg-gradient-to-tr from-[#F4F6FE] via-[#E0E2F0] to-[#D4D7E3] flex items-center justify-center relative overflow-hidden ">
+      <div className="w-full h-64 md:h-80 bg-gradient-to-tr from-light-text/5 via-light-primary to-light-secondary flex items-center justify-center relative overflow-hidden">
         <div className="text-center px-4">
-          <h1 className="text-[#211F54] text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
+          <h1 className="text-light-text font-secondary text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
             All Articles
           </h1>
+          
         </div>
         {/* Subtle overlay shapes in primary text color */}
         <div className="absolute top-0 right-0 w-32 h-32 bg-[#211F54] opacity-10 rounded-full transform translate-x-1/3 -translate-y-1/3"></div>
@@ -233,35 +234,35 @@ const AllArticles = () => {
         <table className="table">
           {/* head */}
           <thead>
-            <tr className="text-3xl text-[#211f54] rancho border-b border-b-gray-300 ">
-              <th className="border-r border-r-gray-300">#</th>
-              <th className="border-r border-r-gray-300">Title</th>
-              <th className="border-r border-r-gray-300">Author</th>
-              <th className="border-r border-r-gray-300">Author Email</th>
-              <th className="border-r border-r-gray-300">Author Pic</th>
-              <th className="border-r border-r-gray-300">Posted Date</th>
-              <th className="border-r border-r-gray-300">Status</th>
-              <th className="border-r border-r-gray-300">Publisher</th>
-              <th className="border-r border-r-gray-300">Is Premium</th>
+            <tr className="text-xl lg:text-2xl text-light-text font-primary border-b border-b-light-text/60 ">
+              <th className="border-r border-r-light-text/50">#</th>
+              <th className="border-r border-r-light-text/50">Title</th>
+              <th className="border-r border-r-light-text/50">Author</th>
+              <th className="border-r border-r-light-text/50">Author Email</th>
+              <th className="border-r border-r-light-text/50">Author Pic</th>
+              <th className="border-r border-r-light-text/50">Posted Date</th>
+              <th className="border-r border-r-light-text/50">Status</th>
+              <th className="border-r border-r-light-text/50">Publisher</th>
+              <th className="border-r border-r-light-text/50">Is Premium</th>
               <th className="">Actions</th>
             </tr>
           </thead>
           <tbody>
             {data?.articles?.map((article, i) => (
               <tr key={article._id}>
-                <th className="border-r border-r-gray-300 text-[17px] urbanist font-medium text-gray-900">
+                <th className="border-r border-r-light-text/60 text-[17px] font-secondary font-medium text-light-text">
                   {i + 1}
                 </th>
-                <td className="border-r border-r-gray-300 text-[17px] urbanist font-medium text-gray-900">
+                <td className="border-r border-r-light-text/60 text-[17px] font-secondary font-medium text-light-text">
                   {article?.articleTitle}
                 </td>
-                <td className="border-r border-r-gray-300 text-[17px] urbanist font-medium text-gray-900">
+                <td className="border-r border-r-light-text/60 text-[17px] font-secondary font-medium text-light-text">
                   {article?.authorName}
                 </td>
-                <td className="border-r border-r-gray-300 text-[17px] urbanist font-medium text-gray-900">
+                <td className="border-r border-r-light-text/60 text-[17px] font-secondary font-medium text-light-text">
                   {article?.authorEmail}
                 </td>
-                <td className="border-r border-r-gray-300 text-[17px] urbanist font-medium text-gray-900">
+                <td className="border-r border-r-light-text/60 text-[17px] font-secondary font-medium text-light-text">
                   {
                     <img
                       src={article?.auhtorPhoto}
@@ -269,11 +270,11 @@ const AllArticles = () => {
                     />
                   }
                 </td>
-                <td className="border-r border-r-gray-300 text-[17px] urbanist font-medium text-gray-900">
+                <td className="border-r border-r-light-text/60 text-[17px] font-secondary font-medium text-light-text">
                   {article?.createdAt.split("T")[0]}
                 </td>
                 <td
-                  className={`border-r border-r-gray-300 text-[17px] urbanist font-bold ${
+                  className={`border-r border-r-light-text/60 text-[17px] font-secondary font-bold ${
                     article?.status === "approved"
                       ? "text-green-600"
                       : "text-red-600"
@@ -281,16 +282,16 @@ const AllArticles = () => {
                 >
                   {article?.status}
                 </td>
-                <td className="border-r border-r-gray-300 text-[17px] urbanist font-medium text-gray-900">
+                <td className="border-r border-r-light-text/60 text-[17px] font-secondary font-medium text-light-text">
                   {article?.publisher?.label}
                 </td>
-                <td>
+                <td className="border-r border-r-light-text/60 text-[17px] font-secondary font-medium text-light-text">
                   {article?.isPremium ? (
-                    <button className="bg-gradient-to-r from-[#211f54] via-[#3a388e] to-[#5a58c9] text-white text-xs font-bold uppercase tracking-wide px-4 py-1 lg:py-3 rounded-full shadow-md hover:scale-105 transition duration-200">
+                    <button className="bg-gradient-to-r from-[#facc15]  to-[#d97706] text-light-text font-secondary text-xs font-bold uppercase tracking-wide px-4 py-1 lg:py-3 rounded-lg shadow-md hover:scale-105 transition duration-200">
                       Premium
                     </button>
                   ) : (
-                    <h2 className="text-md rancho font-bold text-gray-900 text-xl lg:text-2xl">
+                    <h2 className="text-md font-secondary font-bold text-light-text text-xl lg:text-xl">
                       Normal
                     </h2>
                   )}
@@ -367,7 +368,7 @@ const AllArticles = () => {
               onClick={() => setCurrentPage(number)}
               className={`px-3 py-3 rounded ${
                 currentPage === number
-                  ? "bg-[#211f54] text-white text-xs font-bold px-3 lg:px-6 py-1 rounded-full"
+                  ? "bg-light-accent text-light-text text-xs font-bold px-3 lg:px-6 py-1 rounded-full"
                   : "bg-gray-200"
               }`}
             >

@@ -75,7 +75,7 @@ const MyArticleNavTable = ({ myArticle, serial, refetch }) => {
   return (
     <tr>
       <th>{serial + 1}</th>
-      <td className="line-clamp-2">
+      <td className="line-clamp-2 md:truncate">
         {/* {articleTitle.split(" ").slice(0, 15).join(" ")}....... */}
         {articleTitle}
       </td>

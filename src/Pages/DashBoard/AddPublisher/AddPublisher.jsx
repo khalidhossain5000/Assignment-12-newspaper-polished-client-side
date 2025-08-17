@@ -56,41 +56,26 @@ const AddPublisher = () => {
   
   return (
     <div>
-      <div className="px-12 w-full lg:w-11/12 mx-auto rounded-2xl shadow-xl h-48 bg-gradient-to-tr from-[#F4F6FE] via-[#E0E2F0] to-[#D4D7E3] flex items-center justify-center relative overflow-hidden ">
+      <div className="w-full h-64 md:h-80 bg-gradient-to-tr from-light-text/5 via-light-primary to-light-secondary flex items-center justify-center relative overflow-hidden">
         <div className="text-center px-4">
-          <h1 className="text-[#211F54] text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
+          <h1 className="text-light-text font-secondary text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
             Add Publisher
           </h1>
+          
         </div>
         {/* Subtle overlay shapes in primary text color */}
         <div className="absolute top-0 right-0 w-32 h-32 bg-[#211F54] opacity-10 rounded-full transform translate-x-1/3 -translate-y-1/3"></div>
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#211F54] opacity-10 rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
       </div>
-      {/* <form onSubmit={handlePublisher}>
-        <input className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 placeholder-gray-400"  type="text" name="publisher" placeholder="Enter Publisher Name" />
-        <div>
-          <label htmlFor="image" className="block mb-2 text-sm">
-            Select Publisher Image:
-          </label>
-          <input
-            onChange={handleImageUpload}
-            className="bg-gray-200 cursor-pointer"
-            type="file"
-            id="image"
-            name="image"
-            accept="image/*"
-          />
-        </div>
-        <input type="submit" value="Add Publisher" className="btn btn-md btn-warning"/>
-      </form> */}
+      
 
       <form
         onSubmit={handlePublisher}
-        className="bg-[#e4e6f3] p-6 rounded-2xl shadow-xl mt-12 space-y-5 text-[#211f54] max-w-3xl mx-auto"
+        className="bg-light-primary p-6 rounded-2xl shadow-xl mt-12 space-y-5 text-light-text max-w-3xl mx-auto"
       >
         <div>
           <input
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#211f54] focus:border-transparent transition duration-200 placeholder-gray-500 text-sm bg-white"
+            className="w-full px-4 py-3 border border-light-text/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#211f54] focus:border-transparent transition duration-200 placeholder-light-text text-sm bg-light-secondary font-secondary"
             type="text"
             name="publisher"
             placeholder="Enter Publisher Name"
@@ -98,12 +83,12 @@ const AddPublisher = () => {
         </div>
 
         <div>
-          <label htmlFor="image" className="block text-sm font-medium mb-2">
+          <label htmlFor="image" className="block text-sm font-medium mb-2 font-secondary">
             Select Publisher Image
           </label>
           <input
             onChange={handleImageUpload}
-            className="w-full border border-gray-300 file:bg-[#211f54] file:text-white file:px-4 file:py-2 file:rounded-md file:border-none file:cursor-pointer bg-white rounded-lg text-sm text-[#211f54]"
+            className="w-full border border-light-text/30 file:bg-light-accent/90 file:text-white file:px-4 file:py-2 file:rounded-md file:border-none file:cursor-pointer bg-light-secondary font-secondary rounded-lg text-sm text-light-text"
             type="file"
             id="image"
             name="image"
@@ -114,7 +99,7 @@ const AddPublisher = () => {
         <input
           type="submit"
           value="Add Publisher"
-          className="w-full bg-gradient-to-r from-[#211f54] to-[#4d4ba1] text-white font-semibold py-2 rounded-lg uppercase tracking-wide hover:scale-[1.02] transition duration-200 cursor-pointer shadow"
+          className="bg-light-accent text-light-text xl:py-[10px] xl:px-[30px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3 py-1 px-2 hover:bg-light-accent/60 transition duration-300 hover:scale-105 w-full font-secondary font-bold cursor-pointer"
         />
       </form>
     </div>

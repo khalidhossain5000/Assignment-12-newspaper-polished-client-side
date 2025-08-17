@@ -60,7 +60,7 @@ const PublisherChart = () => {
 
   //area options
   const areaOptions = {
-    title: "Monthly Visitors (Demo)",
+    title: "Monthly Visitors",
     hAxis: { title: "Month", titleTextStyle: { color: "#333" } },
     vAxis: { minValue: 0 },
     chartArea: { width: "70%", height: "70%" },

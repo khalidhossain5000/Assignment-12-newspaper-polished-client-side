@@ -87,22 +87,25 @@ const PublicAllArticles = () => {
   });
   if (isLoading || publisherLoading) return <Loading />;
   return (
-    <div className="bg-[#e8efef]">
-      <h1 className="text-center text-3xl lg:text-5xl font-bold text-[#211f54] py-12 ">
+    <div className="bg-light-primary">
+      <h1 className="text-center text-3xl lg:text-5xl font-bold text-light-text font-primary py-12 ">
         All Articles
       </h1>
-      <div className="serch w-96 mx-auto py-12">
-        <div className="flex max-w-md w-full mb-4 rounded-lg overflow-hidden border border-gray-300 shadow-md">
+
+      <div className="flex flex-col lg:flex-row container mx-auto">
+
+      <div className="serch w-96 mx-auto py-12 rounded-lg shaodw-xl font-secondary flex-1 bg-light-secondary p-3 md:w-full xl:w-96">
+        <div className="flex max-w-full lg:max-w-full w-full mb-4 rounded-lg overflow-hidden border border-gray-300 shadow-md">
           <input
             ref={inputRef}
             type="text"
             placeholder="Search articles by title"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
-            className="flex-grow px-4 py-3 text-gray-900 placeholder-gray-400 
-               focus:outline-cyan-200 "
+            className="flex-grow px-4 py-3 text-light-text placeholder-light-text/60 
+               focus:outline-light-text/30 "
           />
-          <button className="bg-[#211f54] hover:bg-[#1a1b4b] text-white font-semibold px-6 py-3 transition-colors duration-300">
+          <button className="bg-light-accent hover:bg-light-accent/60 text-light-text font-semibold px-6 py-3 transition-colors duration-300">
             Search
           </button>
         </div>
@@ -142,12 +145,13 @@ const PublicAllArticles = () => {
           No articles found matching your search/filter.
         </p>
       ) : (
-        <div className=" grid grid-cols-1 md:grid-cols- lg:grid-cols-4 lg:max-w-full container lg:px-22 px-3 mx-auto py-24 gap-6">
+        <div className="py-12 flex-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 lg:max-w-full px-3  gap-6">
           {atricles.map((article) => (
             <ArticelsCard key={article._id} article={article}></ArticelsCard>
           ))}
         </div>
       )}
+      </div>
     </div>
   );
 };
