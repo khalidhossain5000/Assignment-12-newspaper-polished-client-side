@@ -66,7 +66,7 @@ const PublisherChart = () => {
     chartArea: { width: "70%", height: "70%" },
   };
   return (
-    <div className="dark:bg-dark-primary">
+    <div className="dark:bg-dark-primary bg-light-primary pb-6">
 
       <div className=" flex flex-col lg:flex-row items-center py-12 justify-center gap-6">
         <div className="bg-white dark:bg-dark-accent p-2 lg:p-4 shadow rounded-xl lg:flex-1 w-11/12 lg:w-full">

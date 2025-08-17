@@ -5,7 +5,7 @@ import PublisherChart from "../PublisherPieChart/PublisherChart";
 const DashBoardHome = () => {
   
   return (
-    <div className="pb-12 lg:pb-20 overfliw-x-hidden">
+    <div className=" overfliw-x-hidden">
        <div className="w-full h-64 md:h-80 bg-gradient-to-tr from-light-text/5 via-light-primary to-light-secondary dark:from-dark-primary dark:via-dark-secondary dark:to-dark-secondary flex items-center justify-center relative overflow-hidden">
         <div className="text-center px-4">
           <h1 className="text-light-text dark:text-dark-text font-secondary text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">

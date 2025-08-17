@@ -217,24 +217,24 @@ const AllArticles = () => {
   };
 
   return (
-    <div>
-      <div className="w-full h-64 md:h-80 bg-gradient-to-tr from-light-text/5 via-light-primary to-light-secondary flex items-center justify-center relative overflow-hidden">
+    <div className="bg-light-primary dark:bg-dark-primary">
+      <div className="w-full h-64 md:h-80 bg-gradient-to-tr from-light-text/5 via-light-primary to-light-secondary  dark:from-dark-primary dark:via-dark-secondary dark:to-dark-secondary flex items-center justify-center relative overflow-hidden">
         <div className="text-center px-4">
-          <h1 className="text-light-text font-secondary text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
+          <h1 className="text-light-text dark:text-dark-text font-secondary text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
             All Articles
           </h1>
           
         </div>
         {/* Subtle overlay shapes in primary text color */}
-        <div className="absolute top-0 right-0 w-32 h-32 bg-[#211F54] opacity-10 rounded-full transform translate-x-1/3 -translate-y-1/3"></div>
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#211F54] opacity-10 rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
+        <div className="absolute top-0 right-0 w-32 h-32 bg-[#211F54] dark:bg-dark-accent dark:opacity-40 opacity-10 rounded-full transform translate-x-1/3 -translate-y-1/3"></div>
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#211F54] dark:bg-dark-accent dark:opacity-90 opacity-10 rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
       </div>
 
-      <div className="p-3 lg:p-6 mt-6 shadow-2xl max-w-[1500px] mx-auto overflow-x-auto rounded-box bg-white w-full">
+      <div className="p-3 lg:p-6 mt-6 shadow-2xl max-w-[1500px] mx-auto overflow-x-auto rounded-box bg-white dark:bg-dark-primary w-full">
         <table className="table">
           {/* head */}
           <thead>
-            <tr className="text-xl lg:text-2xl text-light-text font-primary border-b border-b-light-text/60 ">
+            <tr className="text-xl lg:text-2xl text-light-text font-primary border-b border-b-light-text/60 dark:bg-light-text dark:text-dark-text">
               <th className="border-r border-r-light-text/50">#</th>
               <th className="border-r border-r-light-text/50">Title</th>
               <th className="border-r border-r-light-text/50">Author</th>
@@ -250,19 +250,19 @@ const AllArticles = () => {
           <tbody>
             {data?.articles?.map((article, i) => (
               <tr key={article._id}>
-                <th className="border-r border-r-light-text/60 text-[17px] font-secondary font-medium text-light-text">
+                <th className="border-r border-r-light-text/60 text-[17px] font-secondary font-medium text-light-text dark:text-dark-text">
                   {i + 1}
                 </th>
-                <td className="border-r border-r-light-text/60 text-[17px] font-secondary font-medium text-light-text">
+                <td className="border-r border-r-light-text/60 text-[17px] font-secondary font-medium text-light-text dark:text-dark-text">
                   {article?.articleTitle}
                 </td>
-                <td className="border-r border-r-light-text/60 text-[17px] font-secondary font-medium text-light-text">
+                <td className="border-r border-r-light-text/60 text-[17px] font-secondary font-medium text-light-text dark:text-dark-text">
                   {article?.authorName}
                 </td>
-                <td className="border-r border-r-light-text/60 text-[17px] font-secondary font-medium text-light-text">
+                <td className="border-r border-r-light-text/60 text-[17px] font-secondary font-medium text-light-text dark:text-dark-text">
                   {article?.authorEmail}
                 </td>
-                <td className="border-r border-r-light-text/60 text-[17px] font-secondary font-medium text-light-text">
+                <td className="border-r border-r-light-text/60 text-[17px] font-secondary font-medium text-light-text dark:text-dark-text">
                   {
                     <img
                       src={article?.auhtorPhoto}
@@ -270,7 +270,7 @@ const AllArticles = () => {
                     />
                   }
                 </td>
-                <td className="border-r border-r-light-text/60 text-[17px] font-secondary font-medium text-light-text">
+                <td className="border-r border-r-light-text/60 text-[17px] font-secondary font-medium text-light-text dark:text-dark-text">
                   {article?.createdAt.split("T")[0]}
                 </td>
                 <td
@@ -282,7 +282,7 @@ const AllArticles = () => {
                 >
                   {article?.status}
                 </td>
-                <td className="border-r border-r-light-text/60 text-[17px] font-secondary font-medium text-light-text">
+                <td className="border-r border-r-light-text/60 text-[17px] font-secondary font-medium text-light-text dark:text-dark-text">
                   {article?.publisher?.label}
                 </td>
                 <td className="border-r border-r-light-text/60 text-[17px] font-secondary font-medium text-light-text">
@@ -291,7 +291,7 @@ const AllArticles = () => {
                       Premium
                     </button>
                   ) : (
-                    <h2 className="text-md font-secondary font-bold text-light-text text-xl lg:text-xl">
+                    <h2 className="text-md font-secondary font-bold text-light-text text-xl lg:text-xl dark:text-dark-text">
                       Normal
                     </h2>
                   )}

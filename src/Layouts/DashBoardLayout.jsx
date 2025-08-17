@@ -63,7 +63,7 @@ const DashBoardLayout = () => {
     <div>
       <div className="drawer  lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content bg-light-primary ">
+        <div className="drawer-content bg-light-primary dark:bg-dark-primary">
           <label
             htmlFor="my-drawer-2"
             className="btn btn-primary drawer-button lg:hidden"

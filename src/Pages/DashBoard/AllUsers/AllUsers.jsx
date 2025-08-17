@@ -35,27 +35,27 @@ const AllUsers = () => {
 
   if (isLoading) return <Loading />;
   return (
-    <div className="py-12 ">
+    <div className=" bg-light-primary dark:bg-dark-primary">
       
-       <div className="w-full h-64 md:h-80 bg-gradient-to-tr from-light-text/5 via-light-primary to-light-secondary flex items-center justify-center relative overflow-hidden">
+       <div className="w-full h-64 md:h-80 bg-gradient-to-tr from-light-text/5 via-light-primary to-light-secondary  dark:from-dark-primary dark:via-dark-secondary dark:to-dark-secondary flex items-center justify-center relative overflow-hidden">
         <div className="text-center px-4">
-          <h1 className="text-light-text font-secondary text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
+          <h1 className="text-light-text dark:text-dark-text font-secondary text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
             All Users
           </h1>
           
         </div>
         {/* Subtle overlay shapes in primary text color */}
-        <div className="absolute top-0 right-0 w-32 h-32 bg-[#211F54] opacity-10 rounded-full transform translate-x-1/3 -translate-y-1/3"></div>
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#211F54] opacity-10 rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
+        <div className="absolute top-0 right-0 w-32 h-32 bg-[#211F54] dark:bg-dark-accent dark:opacity-40 opacity-10 rounded-full transform translate-x-1/3 -translate-y-1/3"></div>
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#211F54] dark:bg-dark-accent dark:opacity-90 opacity-10  rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
       </div>
 
 
 
-      <div className="overflow-x-auto rounded-box border border-light-text/50 p-6 bg-white container mx-auto lg:mt-12 px-3 lg:px-0">
+      <div className="overflow-x-auto rounded-box border border-light-text/50 px-6 bg-light-primary dark:bg-dark-primary  container mx-auto lg:mt-12 px-3 lg:px-0">
         <table className="table">
           {/* head */}
           <thead>
-            <tr className="text-xl md:text-2xl text-light-text font-secondary border-b border-b-light-text/60 ">
+            <tr className="dark:text-dark-text dark:bg-light-text text-xl md:text-2xl text-light-text font-secondary border-b border-b-light-text/60 ">
               <th>#</th>
               <th>Image</th>
               <th>Name</th>
@@ -76,13 +76,13 @@ const AllUsers = () => {
                     className="w-12 h-12 rounded-full"
                   />
                 </td>
-                <td className="text-xs md:text-[17px] font-secondary font-medium text-light-text border-b border-light-text/60">
+                <td className="text-xs md:text-[17px] font-secondary font-medium text-light-text border-b border-light-text/60 dark:text-dark-text">
                   {user?.name}
                 </td>
-                <td className="text-xs md:text-[17px] font-secondary font-medium text-light-text border-b border-light-text/60">
+                <td className="text-xs md:text-[17px] font-secondary font-medium text-light-text border-b border-light-text/60 dark:text-dark-text">
                   {user?.email}
                 </td>
-                <td className="text-xs md:text-[19px] font-secondary font-bold text-light-text border-b border-light-text/60">
+                <td className="text-xs md:text-[19px] font-secondary font-bold text-light-text border-b border-light-text/60 dark:text-dark-text">
                   {user?.role}
                 </td>
                 <td className="border-light-text/60 border-b">
