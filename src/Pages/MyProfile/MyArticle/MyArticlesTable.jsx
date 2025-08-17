@@ -105,9 +105,9 @@ const MyArticlesTable = ({ myArticle, serial, refetch }) => {
 
               <button
                 onClick={() => openModal(myArticle?.declineReason)}
-                className="cursor-pointer relative inline-flex items-center justify-center overflow-hidden rounded-full px-4 py-[6px] text-sm font-medium text-blue-600 border border-blue-600 group hover:text-white transition-all duration-200"
+                className="cursor-pointer relative inline-flex items-center justify-center overflow-hidden rounded-full px-4 py-[6px] text-sm font-medium dark:text-dark-text text-light-text border border-dark-accent group hover:text-white transition-all duration-200"
               >
-                <span className="absolute inset-0 bg-blue-600 transition-all duration-300 ease-out transform scale-x-0 group-hover:scale-x-100 origin-left rounded-full"></span>
+                <span className="absolute inset-0 bg-light-text dark:bg-dark-accent dark:text-dark-primary transition-all duration-300 ease-out transform scale-x-0 group-hover:scale-x-100 origin-left rounded-full"></span>
                 <span className="relative z-10">View Reason</span>
               </button>
             </div>
@@ -151,6 +151,7 @@ const MyArticlesTable = ({ myArticle, serial, refetch }) => {
     transition-all duration-200
     hover:bg-light-accent
     hover:shadow-lg hover:-translate-y-0.5
+    dark:border-dark-accent dark:text-dark-text
   "
           >
             Update Article
