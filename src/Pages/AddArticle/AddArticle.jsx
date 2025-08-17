@@ -131,17 +131,17 @@ const AddArticle = () => {
   };
 
   return (
-    <div className="bg-light-primary min-h-screen mb-6 px-3">
+    <div className="bg-light-primary min-h-screen pb-6 px-3 dark:bg-[radial-gradient(circle_at_top_left,_#12023B,_#030014_70%)]">
       <div className="container w-full mx-auto py-6 lg:py-12 ">
-        <h1 className="text-center text-2xl md:text-3xl lg:text-4xl xl:text-6xl text-light-text font-bold pb-12 font-secondary">
+        <h1 className="text-center text-2xl md:text-3xl lg:text-4xl xl:text-6xl text-light-text dark:text-dark-text font-bold pb-12 font-secondary">
           Add Article{" "}
         </h1>
       </div>
 
-      <div className="container md:mx-auto bg-light-secondary w-full p-6 shadow-2xl rounded-xl ">
+      <div className="container md:mx-auto bg-light-secondary dark:backdrop-blur-2xl dark:bg-dark-accent/80 w-full p-6 shadow-2xl rounded-xl ">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="text-center">
-            <h2 className="text-light-text/50 font-primary py-3 text-2xl text-left md:w-9/12 mx-auto">
+            <h2 className="text-light-text/50 dark:text-dark-primary font-primary py-3 text-2xl text-left md:w-9/12 mx-auto">
               Add Article Title
             </h2>
             <input
@@ -155,19 +155,22 @@ const AddArticle = () => {
             />
           </div>
           <div className="mx-auto border border-light-text p-6 md:w-9/12 my-2 rounded-xl shadow-md">
-            <label htmlFor="image" className="block text-light-text/50 font-primary py-3 text-xl">
+            <label
+              htmlFor="image"
+              className="block text-light-text/50 dark:text-dark-primary font-primary py-3 text-xl"
+            >
               Select Article Image:
             </label>
             {previewUrl && (
               <img
                 src={previewUrl}
                 alt="Preview"
-                className="mt-4 w-12 h-12 rounded-full shadow mb-2 lg:mb-5"
+                className="mt-4 w-12 h-12 rounded-full shadow mb-2 lg:mb-5 "
               />
             )}
             <label
               htmlFor="image"
-              className="mx-auto flex items-center gap-3 px-4 py-2 bg-light-primary text-light-text border border-light-text rounded-md cursor-pointer hover:bg-light-text/20 transition"
+              className="mx-auto flex items-center gap-3 px-4 py-2 bg-light-primary dark:bg-dark-accent/30 text-light-text border border-light-text rounded-md cursor-pointer hover:bg-light-text/20 transition"
             >
               <FiUpload className="text-xl" />
               <span>Choose Image</span>
@@ -191,7 +194,7 @@ const AddArticle = () => {
                 marginTop: "20px",
                 marginBottom: "5px",
               }}
-              className="text-light-text/50 font-primary py-3 text-2xl text-left md:w-9/12 mx-auto"
+              className="text-light-text/50 dark:text-dark-primary font-primary py-3 text-2xl text-left md:w-9/12 mx-auto"
             >
               Tags
             </label>
@@ -201,6 +204,13 @@ const AddArticle = () => {
               render={({ field }) => (
                 <Select
                   {...field}
+                  styles={{
+                    control: (base) => ({
+                      ...base,
+                      backgroundColor: "#dcbd25",
+                      color:'#0b0714'
+                    }),
+                  }}
                   options={tagOptions}
                   isMulti
                   placeholder="Select Tags"
@@ -220,7 +230,7 @@ const AddArticle = () => {
           <div>
             <label
               style={{ display: "block", marginBottom: "5px" }}
-              className="text-light-text/50 font-primary py-3 md:text-2xl text-left md:w-9/12 mx-auto"
+              className="text-light-text/50 dark:text-dark-primary font-primary py-3 md:text-2xl text-left md:w-9/12 mx-auto"
             >
               Publisher
             </label>
@@ -230,6 +240,13 @@ const AddArticle = () => {
               render={({ field }) => (
                 <Select
                   {...field}
+                   styles={{
+                    control: (base) => ({
+                      ...base,
+                      backgroundColor: "#dcbd25",
+                      color:'#0b0714'
+                    }),
+                  }}
                   options={publisherOptions}
                   placeholder="Select Publisher"
                   onChange={(selectedOption) => field.onChange(selectedOption)}
@@ -243,14 +260,14 @@ const AddArticle = () => {
             />
           </div>
           <div className="mx-auto text-center">
-            <label className="block text-light-text/50 font-primary py-3 text-xl md:text-2xl w-full md:w-9/12 text-left mx-auto">
+            <label className="block text-light-text/50 dark:text-dark-primary font-primary py-3 text-xl md:text-2xl w-full md:w-9/12 text-left mx-auto">
               Descriptions
             </label>
             <textarea
               rows={3}
               cols={50}
               placeholder="Add Article Details"
-              className="border w-full md:w-9/12 rounded-xl shadow-sm my-3 p-6 mx-auto"
+              className="border dark:border dark:border-dark-primary w-full md:w-9/12 rounded-xl shadow-sm my-3 p-6 mx-auto"
               {...register("descriptions")}
             />
           </div>
@@ -262,8 +279,9 @@ const AddArticle = () => {
               </div>
             ) : (
               <input
-                className="bg-light-accent text-light-text xl:py-[10px] xl:px-[30px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3 py-1 px-2 hover:bg-light-accent/60 transition duration-300 hover:scale-110 w-9/12 mx-auto cursor-pointer"
+                className="bg-light-accent text-light-text xl:py-[10px] xl:px-[30px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3 py-1 px-2 hover:bg-light-accent/60 dark:bg-dark-accent dark:font-bold transition duration-300 hover:scale-110 w-9/12 mx-auto cursor-pointer"
                 type="submit"
+                value='Submit Article'
               />
             )}
           </div>
