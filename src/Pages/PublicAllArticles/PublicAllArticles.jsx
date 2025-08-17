@@ -87,14 +87,14 @@ const PublicAllArticles = () => {
   });
   if (isLoading || publisherLoading) return <Loading />;
   return (
-    <div className="bg-light-primary">
-      <h1 className="text-center text-3xl lg:text-5xl font-bold text-light-text font-primary py-12 ">
+    <div className="bg-light-primary dark:bg-dark-primary">
+      <h1 className="text-center text-3xl lg:text-5xl font-bold dark:text-dark-text text-light-text font-primary py-12 ">
         All Articles
       </h1>
 
-      <div className="flex flex-col lg:flex-row container mx-auto">
+      <div className=" flex flex-col lg:flex-row items-start container mx-auto pt-6 xl:pt-12 ">
 
-      <div className="serch w-96 mx-auto py-12 rounded-lg shaodw-xl font-secondary flex-1 bg-light-secondary p-3 md:w-full xl:w-96">
+      <div className=" serch w-96 mx-auto py-12 rounded-lg shaodw-xl font-secondary flex-1 bg-light-secondary p-3 md:w-full xl:w-96">
         <div className="flex max-w-full lg:max-w-full w-full mb-4 rounded-lg overflow-hidden border border-gray-300 shadow-md">
           <input
             ref={inputRef}
@@ -145,7 +145,7 @@ const PublicAllArticles = () => {
           No articles found matching your search/filter.
         </p>
       ) : (
-        <div className="py-12 flex-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 lg:max-w-full px-3  gap-6">
+        <div className=" flex-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 lg:max-w-full px-3  gap-6">
           {atricles.map((article) => (
             <ArticelsCard key={article._id} article={article}></ArticelsCard>
           ))}

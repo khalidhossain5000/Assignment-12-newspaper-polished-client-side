@@ -89,10 +89,9 @@ const ArticelsCard = ({ article }) => {
                 </button>
               ) : (
                 <Link
-                  className="mt-3 px-6 lg:px-12 py-2 lg:py-3 rounded-sm shadow-md bg-[#16b7cc] w-full md:text-xl font-bold text-white"
                   to={`/article/${_id}`}
                 >
-                  Read More
+                  <button  className="bg-light-accent text-light-text xl:py-[10px] xl:px-[30px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3 py-1 px-2 hover:bg-light-accent/60 transition duration-300 hover:scale-110 w-full">Read More</button>
                 </Link>
               )}
             </div>
@@ -142,10 +141,10 @@ const ArticelsCard = ({ article }) => {
                 </button>
               ) : (
                 <Link
-                  className="mt-3 px-6 lg:px-12 py-2 lg:py-3 rounded-sm shadow-md bg-[#16b7cc] w-full md:text-xl font-bold text-white"
+                className="w-full"
                   to={`/article/${_id}`}
                 >
-                  Read More
+                  <button  className="bg-light-accent text-light-text xl:py-[10px] xl:px-[30px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3 py-1 px-2 hover:bg-light-accent/60 transition duration-300 hover:scale-110 w-full">Read More</button>
                 </Link>
               )}
             </div>

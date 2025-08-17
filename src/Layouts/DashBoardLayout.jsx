@@ -82,7 +82,7 @@ const DashBoardLayout = () => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <div className="  menu flex flex-col justify-between bg-light-text text-light-primary font-primary text-[17px] font-medium min-h-full lg:w-80 max-w-64 p-4 ">
+          <div className="  menu flex flex-col justify-between bg-light-text text-light-primary dark:bg-dark-primary font-primary text-[17px] font-medium min-h-full lg:w-80 max-w-64 p-4 ">
             <div className="logolinks">
               <Link to='/'><img src={siteLogo} className="p-6 mb-6 lg:mb-9" alt="" /></Link>
               <ul className="space-y-3">
