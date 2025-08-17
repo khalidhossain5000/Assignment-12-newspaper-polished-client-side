@@ -25,16 +25,17 @@ const Subscription = () => {
   };
   return (
     <div className="">
-      <div className="w-full h-64 md:h-80 lg:h-96 bg-gradient-to-tr from-[#F4F6FE] via-[#E0E2F0] to-[#D4D7E3] flex items-center justify-center relative overflow-hidden">
+      
+      <div className="w-full h-64 md:h-80 lg:h-96 bg-gradient-to-tr from-light-text/5 via-light-primary to-light-secondary flex items-center justify-center relative overflow-hidden">
         <div className="text-center px-4">
-          <h1 className="text-[#211F54] text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
+          <h1 className="text-light-text font-secondary text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
             Stay Informed. Stay Ahead.
           </h1>
-          <p className="text-[#211F54] text-lg md:text-xl mb-6">
+          <p className="text-light-text/50 font-primary text-lg md:text-xl mb-6">
             Go Premium and Get Access to Unlimited Articles, Unlimited Voice —
             Start Your Journey.
           </p>
-          <button className="bg-[#211F54] text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition duration-300">
+          <button className="bg-light-accent text-light-text xl:py-[10px] xl:px-[30px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3 py-1 px-2 hover:bg-light-accent/60 transition duration-300 hover:scale-110">
             Subscribe Now
           </button>
         </div>
@@ -46,8 +47,8 @@ const Subscription = () => {
       {/* 2. Subscription Form */}
 
       <div className="px-3 md:px-0">
-        <div className="my-14 lg:my-24 w-full max-w-xl mx-auto bg-gradient-to-br from-[#F4F6FE] via-[#E0E2F0] to-[#D4D7E3] shadow-2xl p-10 rounded-2xl border-t-4 border-b-4 border-[#211F54]">
-        <h3 className="text-3xl font-serif text-[#211F54] mb-8 text-center tracking-wide">
+        <div className="my-14 lg:my-24 w-full max-w-xl mx-auto bg-gradient-to-br from-light-primary via-light-text/10 to-light-secondary shadow-2xl p-10 rounded-2xl border-t-4 border-b-4 border-light-accent">
+        <h3 className="text-3xl text-light-text font-secondary mb-8 text-center tracking-wide">
           Choose Your Plan
         </h3>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -55,7 +56,7 @@ const Subscription = () => {
             <select
               {...register("duration")}
               defaultValue=""
-              className="w-full appearance-none px-5 py-3 bg-white bg-opacity-80 border border-gray-300 rounded-lg font-medium focus:outline-none focus:border-[#211F54] transition"
+              className="w-full appearance-none px-5 py-3 bg-light-primary bg-opacity-80 border border-light-text/30 rounded-lg font-medium focus:outline-none focus:border-[#211F54] transition"
             >
               <option value="" disabled>
                 Select duration (Days)
@@ -68,7 +69,7 @@ const Subscription = () => {
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
               <svg
-                className="w-6 h-6 text-gray-400"
+                className="w-6 h-6 text-light-text"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -83,16 +84,16 @@ const Subscription = () => {
             </div>
           </div>
 
-          <p className="text-center text-xl font-semibold text-[#211F54] mb-8">
+          <p className="text-center text-xl font-semibold text-light-text mb-8">
             Price:&nbsp;
-            <span className="text-green-600">
+            <span className="text-light-text/90 font-primary">
               ${selectedPlan ? selectedPlan.price : 0}
             </span>
           </p>
 
           <button
             type="submit"
-            className="w-full py-4 bg-gradient-to-r from-[#211F54] to-[#433D7E] text-white font-semibold rounded-full shadow-lg hover:opacity-95 transition cursor-pointer"
+            className="bg-light-accent text-light-text xl:py-[10px] xl:px-[30px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3 py-1 px-2 hover:bg-light-accent/60 transition duration-300 hover:scale-110 w-full"
           >
             Subscribe Now
           </button>

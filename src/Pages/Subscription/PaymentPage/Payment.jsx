@@ -6,12 +6,12 @@ const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
 const Payment = () => {
   return (
     <div>
-      <div className="w-full h-64 md:h-80 lg:h-96 bg-gradient-to-tr from-[#F4F6FE] via-[#E0E2F0] to-[#D4D7E3] flex items-center justify-center relative overflow-hidden">
+      <div className="w-full h-64 md:h-80 lg:h-96 bg-gradient-to-tr  from-light-text/5 via-light-primary to-light-secondary flex items-center justify-center relative overflow-hidden">
         <div className="text-center px-4">
-          <h1 className="text-[#211F54] text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
+          <h1 className="text-light-text font-primary text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
             Complete Your Payment Securely
           </h1>
-          <p className="text-[#211F54] text-lg md:text-xl mb-6">
+          <p className="text-light-text/50 font-primary text-lg md:text-xl mb-6">
             Enter your payment details below to unlock unlimited premium
             content. Your information is encrypted and processed securely via
             Stripe’s PCI‑compliant platform.

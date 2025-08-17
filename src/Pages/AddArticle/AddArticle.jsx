@@ -131,22 +131,22 @@ const AddArticle = () => {
   };
 
   return (
-    <div className="bg-[#e8efef] min-h-screen mb-6 px-3">
+    <div className="bg-light-primary min-h-screen mb-6 px-3">
       <div className="container w-full mx-auto py-6 lg:py-12 ">
-        <h1 className="text-center md:text-left text-5xl lg:text-6xl urbanist font-bold text-[#211f54]">
+        <h1 className="text-center text-2xl md:text-3xl lg:text-4xl xl:text-6xl text-light-text font-bold pb-12 font-secondary">
           Add Article{" "}
         </h1>
       </div>
 
-      <div className="container md:mx-auto bg-white w-full p-6 shadow-2xl rounded-xl ">
+      <div className="container md:mx-auto bg-light-secondary w-full p-6 shadow-2xl rounded-xl ">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="text-center">
-            <h2 className="text-gray-800 py-3 text-2xl text-left md:w-9/12 mx-auto">
-              Add Article
+            <h2 className="text-light-text/50 font-primary py-3 text-2xl text-left md:w-9/12 mx-auto">
+              Add Article Title
             </h2>
             <input
               type="text"
-              className="mx-auto border border-gray-500 w-full md:w-9/12 p-2 rounded-md placeholder:text-[#211f54] focus:outline-none
+              className="mx-auto border border-light-text w-full md:w-9/12 p-2 rounded-md placeholder:text-light-text focus:outline-none
              focus:ring-0
              focus:shadow-[0_0_0_4px_rgba(33,31,84,0.2)]
              transition duration-300"
@@ -154,8 +154,8 @@ const AddArticle = () => {
               {...register("articleTitle")}
             />
           </div>
-          <div className="mx-auto border border-gray-600 p-6 md:w-9/12 my-2 rounded-xl shadow-md">
-            <label htmlFor="image" className="block text-gray-800 py-3 text-xl">
+          <div className="mx-auto border border-light-text p-6 md:w-9/12 my-2 rounded-xl shadow-md">
+            <label htmlFor="image" className="block text-light-text/50 font-primary py-3 text-xl">
               Select Article Image:
             </label>
             {previewUrl && (
@@ -167,7 +167,7 @@ const AddArticle = () => {
             )}
             <label
               htmlFor="image"
-              className="mx-auto flex items-center gap-3 px-4 py-2 bg-gray-100 text-gray-700 border border-gray-300 rounded-md cursor-pointer hover:bg-gray-200 transition"
+              className="mx-auto flex items-center gap-3 px-4 py-2 bg-light-primary text-light-text border border-light-text rounded-md cursor-pointer hover:bg-light-text/20 transition"
             >
               <FiUpload className="text-xl" />
               <span>Choose Image</span>
@@ -191,7 +191,7 @@ const AddArticle = () => {
                 marginTop: "20px",
                 marginBottom: "5px",
               }}
-              className="block text-gray-800 py-3 text-xl md:w-9/12 mx-auto"
+              className="text-light-text/50 font-primary py-3 text-2xl text-left md:w-9/12 mx-auto"
             >
               Tags
             </label>
@@ -208,7 +208,7 @@ const AddArticle = () => {
                     field.onChange(selectedOptions)
                   }
                   value={field.value}
-                  className="border border-gray-100 w-full md:w-9/12  mx-auto p-2 rounded-md placeholder:text-[#211f54] focus:outline-none focus:ring-0
+                  className="border border-light-text w-full md:w-9/12  mx-auto p-2 rounded-md placeholder:text-light-text focus:outline-none focus:ring-0
              focus:shadow-[0_0_0_4px_rgba(33,31,84,0.2)]
              transition duration-300"
                 />
@@ -220,7 +220,7 @@ const AddArticle = () => {
           <div>
             <label
               style={{ display: "block", marginBottom: "5px" }}
-              className="block text-gray-800 py-3 text-xl w-full md:w-9/12 mx-auto"
+              className="text-light-text/50 font-primary py-3 md:text-2xl text-left md:w-9/12 mx-auto"
             >
               Publisher
             </label>
@@ -235,7 +235,7 @@ const AddArticle = () => {
                   onChange={(selectedOption) => field.onChange(selectedOption)}
                   value={field.value}
                   isLoading={isLoading}
-                  className="border border-gray-100 w-full md:w-9/12 mx-auto p-2 rounded-md placeholder:text-[#211f54] focus:outline-none focus:ring-0
+                  className="border border-light-text w-full md:w-9/12 mx-auto p-2 rounded-md placeholder:text-light-text focus:outline-none focus:ring-0
              focus:shadow-[0_0_0_4px_rgba(33,31,84,0.2)]
              transition duration-300"
                 />
@@ -243,7 +243,7 @@ const AddArticle = () => {
             />
           </div>
           <div className="mx-auto text-center">
-            <label className="block text-gray-800 py-3 text-xl w-full md:w-9/12 text-left mx-auto">
+            <label className="block text-light-text/50 font-primary py-3 text-xl md:text-2xl w-full md:w-9/12 text-left mx-auto">
               Descriptions
             </label>
             <textarea
@@ -262,7 +262,7 @@ const AddArticle = () => {
               </div>
             ) : (
               <input
-                className="mt-3 px-6 lg:px-12 py-2 lg:py-3 rounded-sm shadow-md bg-[#16b7cc] w-full md:text-xl font-bold text-white cursor-pointer lg:w-9/12 mx-auto"
+                className="bg-light-accent text-light-text xl:py-[10px] xl:px-[30px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3 py-1 px-2 hover:bg-light-accent/60 transition duration-300 hover:scale-110 w-9/12 mx-auto cursor-pointer"
                 type="submit"
               />
             )}

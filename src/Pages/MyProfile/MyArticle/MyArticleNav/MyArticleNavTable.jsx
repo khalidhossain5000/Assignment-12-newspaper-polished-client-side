@@ -88,11 +88,10 @@ const MyArticleNavTable = ({ myArticle, serial, refetch }) => {
         </Link> */}
         <Link
           to={`/article/${myArticle._id}`}
-          className="relative inline-block px-6 py-2 font-semibold text-white group"
+          
+
         >
-          <span className="absolute inset-0 w-full h-full transition duration-300 ease-out transform translate-x-1 translate-y-1 bg-blue-700 group-hover:-translate-x-0 group-hover:-translate-y-0 rounded-lg"></span>
-          <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg group-hover:shadow-xl transition duration-300 ease-out"></span>
-          <span className="relative">Details</span>
+          <button  className="bg-light-accent text-light-text xl:py-[5px] xl:px-[20px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3 py-1 px-2 hover:bg-light-accent/60 transition duration-300 hover:scale-110 w-full font-secondary font-bold mx-auto cursor-pointer">Details</button>
         </Link>
       </td>
 
@@ -119,9 +118,9 @@ const MyArticleNavTable = ({ myArticle, serial, refetch }) => {
 
             <button
               onClick={() => openModal(myArticle?.declineReason)}
-              className="cursor-pointer relative inline-flex items-center justify-center overflow-hidden rounded-full px-4 py-[6px] text-sm font-medium text-blue-600 border border-blue-600 group hover:text-white transition-all duration-200"
+              className="cursor-pointer relative inline-flex items-center justify-center overflow-hidden rounded-full px-4 py-[6px] text-sm font-medium text-light-text border border-light-accent group hover:text-white transition-all duration-200"
             >
-              <span className="absolute inset-0 bg-blue-600 transition-all duration-300 ease-out transform scale-x-0 group-hover:scale-x-100 origin-left rounded-full"></span>
+              <span className="absolute inset-0 bg-light-text transition-all duration-300 ease-out transform scale-x-0 group-hover:scale-x-100 origin-left rounded-full"></span>
               <span className="relative z-10">View Reason</span>
             </button>
           </div>
@@ -165,10 +164,10 @@ const MyArticleNavTable = ({ myArticle, serial, refetch }) => {
             className="
     inline-flex items-center whitespace-nowrap
     px-5 py-2 text-sm font-semibold
-    text-[#16b7cc] border-2 border-[#16b7cc]
+    text-light-text hover:text-light-text border-1 border-light-text
     rounded-full
     transition-all duration-200
-    hover:bg-[#16b7cc] hover:text-white
+    hover:bg-light-accent
     hover:shadow-lg hover:-translate-y-0.5
   "
           >
@@ -184,7 +183,7 @@ const MyArticleNavTable = ({ myArticle, serial, refetch }) => {
 
           <button
             onClick={() => handleDelete(myArticle._id)}
-            className="whitespace-nowrap inline-block px-6 py-2 bg-[#211f54] text-white font-medium rounded-md transition-transform duration-500 ease-out hover:bg-red-600 cursor-pointer hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#16b7cc]"
+            className="bg-light-accent text-light-text xl:py-[5px] xl:px-[20px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3 py-1 px-2 hover:bg-light-accent/60 transition duration-300 hover:scale-110 w-6/12 font-secondary font-bold mx-auto cursor-pointer"
           >
             Delete Article
           </button>
@@ -194,14 +193,14 @@ const MyArticleNavTable = ({ myArticle, serial, refetch }) => {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Decline Reason Modal"
-        className="p-6 bg-[#e7e9f5] rounded-xl  shadow-lg max-w-lg lg:w-[500px] mx-auto mt-20"
-        overlayClassName="fixed inset-0 bg-black/30 flex justify-center items-center"
+        className="p-6 bg-light-secondary rounded-xl  shadow-lg max-w-lg lg:w-[500px] mx-auto mt-20"
+        overlayClassName="fixed inset-0 bg-black/30 flex justify-center items-center z-[99999]"
       >
         <h2 className="text-lg font-bold mb-4 text-red-600">Decline Reason</h2>
         <p className="mb-6">{declineReason || "No reason provided."}</p>
         <button
           onClick={closeModal}
-          className="whitespace-nowrap inline-block px-6 py-2 bg-[#211f54] text-white font-medium rounded-md transition-transform duration-500 ease-out hover:bg-red-600 cursor-pointer hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#16b7cc]"
+          className="whitespace-nowrap inline-block px-6 py-2 bg-light-accent text-light-text font-medium rounded-md transition-transform duration-500 ease-out hover:bg-red-600 cursor-pointer hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#16b7cc]"
         >
           Close
         </button>

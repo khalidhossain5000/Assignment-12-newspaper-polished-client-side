@@ -155,9 +155,9 @@ const PaymentForm = () => {
 
     <div className="py-12 lg:py-20 px-2 lg:px-0">
       {/* form start */}
-      <div className="max-w-2xl mx-auto mt-12 bg-gradient-to-br from-[#F4F6FE] via-[#E0E2F0] to-[#D4D7E3] p-8 rounded-3xl shadow-2xl">
+      <div className="max-w-2xl mx-auto mt-12 bg-gradient-to-br  from-light-text/5 via-light-primary to-light-secondary p-8 rounded-3xl shadow-2xl">
         <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="p-4 bg-white rounded-xl shadow-inner">
+          <div className="p-4 bg-light-primary rounded-xl shadow-inner">
             <CardElement
               options={{
                 style: {
@@ -174,13 +174,15 @@ const PaymentForm = () => {
           </div>
           <button
             type="submit"
-            className="cursor-pointer w-full py-3 bg-gradient-to-r from-[#211F54] to-[#433D7E] text-white font-semibold rounded-full shadow-lg hover:opacity-95 transition"
+
+            className="bg-light-accent text-light-text xl:py-[10px] xl:px-[30px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3 py-1 px-2 hover:bg-light-accent/60 transition duration-300 hover:scale-110 w-full font-secondary font-bold mx-auto cursor-pointer"
+
             disabled={!stripe || processing}
           >
             {processing ? "Processing..." : `Pay $${amount}`}
           </button>
           {error && (
-            <p className="text-center text-sm text-red-600 font-medium">
+            <p className="text-center text-sm text-light-text font-medium">
               {error}
             </p>
           )}

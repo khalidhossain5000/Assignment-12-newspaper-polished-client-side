@@ -29,7 +29,7 @@ const MyArticles = () => {
     <div>
       <div className="py-24 bg-gradient-to-tr from-[#7e7dfd] via-white to-[#ffcfff]">
         <h1 className="text-center text-3xl font-bold inter  py-6">
-          MY ARTICLES
+          MY ARTICLESssss
         </h1>
       </div>
 
