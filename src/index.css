@@ -174,30 +174,7 @@ a.active{
 }
 
 
-.urbanist{
-  font-family: "Urbanist", sans-serif;
-  font-optical-sizing: auto;
-  
-  font-style: normal;
-}
 
-.inter{
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
-
-.rancho {
-  font-family: "Rancho", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.poppins{
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
 
 /* sweet alert custom background color */
 .gradient-bg{
@@ -207,7 +184,7 @@ a.active{
 }
 .error-gradient-bg{
   
-  background: linear-gradient(to bottom right,  #ac0000, #dc2430, #fb0000) !important;
+  background: linear-gradient(to bottom right,  #040017,#100136 ) !important;
   font-size: 20px;
 }
 

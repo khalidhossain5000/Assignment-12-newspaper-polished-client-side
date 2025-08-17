@@ -29,14 +29,7 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     setPasswordError("");
-    // password validation start
-    // const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
-    // if (passwordPattern.test(password) == false) {
-    //   setPasswordError(
-    //     "Password Length must be at least 6 characters And Must have an Uppercase and a Lowercase letter"
-    //   );
-    //   return;
-    // }
+    
     const passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{6,}$/;
 
 if (!passwordPattern.test(password)) {
@@ -88,7 +81,7 @@ if (!passwordPattern.test(password)) {
           style: {
             border: "1px solid #08086c",
             color: "white",
-            backgroundImage: "linear-gradient(to bottom right, #050342,#01c3f4 )"
+            backgroundImage: "linear-gradient(to bottom right, #040017,#100136 )"
           },
         });
             navigate(from);

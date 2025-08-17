@@ -1,7 +1,25 @@
 import React from "react";
 import bgImg from "../../../assets/background/subscribe-section-bg.webp";
 import { IoMailOutline } from "react-icons/io5";
+import Swal from "sweetalert2";
 const SubscribeNewsLetter = () => {
+  const handleSubmit=(e)=>{
+    e.preventDefault()
+    Swal.fire({
+                title: "Form Submitted Successfully",
+                icon: "success",
+                html: "<p class='text-xl   mt-2'>Thank you for subscribing to our newsletter. You'll receive the latest updates in your inbox.</p>",
+                confirmButtonText: "Ok!",
+                background: "#0a2b4a", // dark bg
+                color: "#ffffff", // white text
+                buttonsStyling: false,
+                customClass: {
+                  popup: "gradient-bg",
+                  confirmButton:
+                    "bg-[#13a0b5] hover:bg-[#040230] text-white font-semibold px-6 py-2 rounded-sm shadow-md  cursor-pointer",
+                },
+              });
+  }
   return (
     <div className="py-12 md:py-24 px-3 xl:px-0 dark:bg-dark-secondary/60">
       <div className="container mx-auto  flex flex-col lg:flex-row items-center justify-center border-2 border-light-text/50 w-full">
@@ -25,7 +43,7 @@ const SubscribeNewsLetter = () => {
             Get the latest updates and news directly to your inbox.
           </p>
 
-          <form className=" md:w-11/12 lg:w-9/12 flex mx-auto md:mx-0 pt-4 lg:pt-6">
+          <form onSubmit={handleSubmit} className=" md:w-11/12 lg:w-9/12 flex mx-auto md:mx-0 pt-4 lg:pt-6">
             <input
               type="email"
               placeholder="Enter your email"

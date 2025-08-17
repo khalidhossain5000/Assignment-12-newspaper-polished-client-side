@@ -36,15 +36,15 @@ const ArticleDetails = () => {
       {/* <h1 className="text-2xl text-center py-12 font-bold">
         Article Details for id number : {id}
       </h1> */}
-      <div className="bg-[#f4f7ff] p-12 lg:p-20">
+      <div className="bg-light-primary dark:bg-dark-primary p-12 lg:p-20">
         <div className="imgandtitle container lg:max-w-[1500px]  flex flex-col lg:flex-row items-center justify-center mx-auto">
           <div className="flex-1">
             <div className="border-l-3 border-l-cyan-500 px-3 lg:ml-2  my-6 lg:my-14 ">
               <div className="flex items-center justify-center lg:justify-start">
-                <h2 className="text-gray-900 lg:text-xl font-bold">
+                <h2 className="text-light-text dark:text-dark-text lg:text-xl font-bold">
                   By : {article.authorName} On{" "}
                 </h2>
-                <h2 className="text-gray-700 font-bold mx-2 text-[17px]">
+                <h2 className="text-light-text dark:text-dark-accent font-bold mx-2 text-[17px]">
                   {new Date(article?.createdAt).toLocaleDateString("en-US", {
                     year: "numeric",
                     month: "long",
@@ -53,11 +53,11 @@ const ArticleDetails = () => {
                 </h2>
               </div>
 
-              <h3 className="text-xl flex items-center justify-center lg:justify-start font-bold text-red-600 mt-3 lg:mt-6">
+              <h3 className="text-xl flex items-center justify-center lg:justify-start font-bold light-text dark:text-dark-accent mt-3 lg:mt-6">
                 <FaFire className="text-xl mx-2" /> Views: {article?.views}
               </h3>
             </div>
-            <h2 className="inter font-extrabold text-2xl text-center lg:text-left mb-6 lg:mb-0 lg:text-6xl text-[#211f54]">
+            <h2 className="inter font-extrabold text-2xl text-center lg:text-left mb-6 lg:mb-0 lg:text-6xl text-light-text dark:text-dark-text">
               {article?.articleTitle}
             </h2>
           </div>
@@ -69,15 +69,15 @@ const ArticleDetails = () => {
         </div>
       </div>
 
-      <div className="setails bg-[#031d35] p-3 lg:p-20 ">
+      <div className="setails bg-light-accent/90 p-3 lg:p-20 ">
         <div className=" lg:p-12 container mx-auto gap-3 lg:gap-6 text-white flex flex-col lg:flex-row ">
-          <div className="lg:flex-2 descripitosn bg-[#1c2c59] p-6 w-full">
-            <h2 className="text-xl font-bold  mb-3 text-cyan-400">
+          <div className="lg:flex-2 descripitosn bg-light-text dark:bg-dark-primary rounded-lg p-6 w-full">
+            <h2 className="text-xl font-bold  mb-3 text-light-accent">
               Descriptions :{" "}
             </h2>
             <p className="text-xl">{article?.descriptions}</p>
           </div>
-          <div className="lg:flex-1 tagspubs clear-start bg-[#0a2b4a] rounded-md shadow-2xl max-h-96">
+          <div className="lg:flex-1 tagspubs clear-start bg-light-secondary dark:bg-dark-secondary rounded-md shadow-2xl max-h-96">
             <div className="tgs p-6 lg:px-9 text-cener">
               <h2 className="text-xl font-bold text-white mb-3">Tags</h2>
 

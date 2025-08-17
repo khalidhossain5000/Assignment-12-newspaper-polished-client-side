@@ -28,23 +28,18 @@ const PremiumArticleCard = ({ premiumArticle }) => {
           alt={articleTitle}
         />
 
-
-
-
-
-
         <div className="contentds p-6 font-secondary mt-6 flex flex-col justify-between">
           <div>
             <h3 className="text-light-text  text-xl font-medium">
-            <span className="font-bold">Publisher</span> :{" "}
-            {premiumArticle.publisher?.label}
-          </h3>
-          <h2 className="text-light-text font-bold  text-xl lg:text-2xl py-2 lg:py-4 ">
-            {articleTitle}
-          </h2>
-          <p className="line-clamp-3 text-md text-light-text font-normal">
-            {descriptions}
-          </p>
+              <span className="font-bold">Publisher</span> :{" "}
+              {premiumArticle.publisher?.label}
+            </h3>
+            <h2 className="text-light-text font-bold  text-xl lg:text-2xl py-2 lg:py-4 ">
+              {articleTitle}
+            </h2>
+            <p className="line-clamp-3 text-md text-light-text font-normal">
+              {descriptions}
+            </p>
           </div>
 
           <div className="dateandauthor flex items-center justify-between py-2 lg:py-5">
@@ -58,11 +53,10 @@ const PremiumArticleCard = ({ premiumArticle }) => {
             </h2>
           </div>
           <div className="mx-auto text-center ">
-            <Link
-              
-              to={`/article/${_id}`}
-            >
-              <button className="bg-light-accent text-light-text xl:py-[10px] xl:px-[30px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3 py-1 px-2 hover:bg-light-accent/60 transition duration-300 hover:scale-110 w-full cursor-pointer font-bold">Read More</button>
+            <Link to={`/article/${_id}`}>
+              <button className="bg-light-accent text-light-text xl:py-[10px] xl:px-[30px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3 py-1 px-2 hover:bg-light-accent/60 transition duration-300 hover:scale-110 w-full cursor-pointer font-bold">
+                Read More
+              </button>
             </Link>
           </div>
         </div>

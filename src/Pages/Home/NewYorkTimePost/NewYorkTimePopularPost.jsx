@@ -16,7 +16,7 @@ const NewYorkTimePopularPost = () => {
     queryKey: ["nytPost"],
     queryFn: fetchNytPost,
   });
-  console.log(data, "all data");
+  
   if (isLoading) return <Loading />;
   return (
     <div className="py-12 md:py-24  dark:bg-gradient-to-b dark:from-dark-primary dark:to-dark-secondary">

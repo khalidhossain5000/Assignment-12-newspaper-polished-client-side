@@ -29,17 +29,7 @@ const AllArticles = () => {
     setDeclineReason("");
   };
 
-  // const {
-  //   data: atricles = [],
-  //   isLoading,
-  //   refetch,
-  // } = useQuery({
-  //   queryKey: ["articles", user?.email],
-  //   queryFn: async () => {
-  //     const res = await axiosSecure.get("/articles");
-  //     return res.data;
-  //   },
-  // });
+ 
   const {
     data = { articles: [], total: 0 },
     isLoading,
@@ -84,7 +74,7 @@ const AllArticles = () => {
         icon: "warning",
         showCancelButton: true,
         buttonsStyling: false,
-        color: "black",
+        color: "white",
         customClass: {
           popup: "error-gradient-bg",
           confirmButton:

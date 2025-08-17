@@ -3,7 +3,7 @@ import { IoStatsChartSharp } from "react-icons/io5";
 import { Link } from "react-router";
 
 const NytPopularCard = ({ popularPost }) => {
-  console.log("popularPost", popularPost);
+  
   const { articlePic, articleTitle, createdAt, views, descriptions,_id } =
     popularPost;
   return (

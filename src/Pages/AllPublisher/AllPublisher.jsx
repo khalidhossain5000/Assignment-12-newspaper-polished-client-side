@@ -19,10 +19,10 @@ const AllPublisher = () => {
   });
 
   if (isPending) return <Loading />;
-  console.log(articleCount);
+  
   return (
     <div className="bg-light-primary dark:bg-dark-primary">
-      <h1 className="text-center text-3xl lg:text-5xl font-bold dark:text-dark-text text-light-text font-primary py-12 dark:text-dark-text">
+      <h1 className="text-center text-3xl lg:text-5xl font-bold text-light-text font-primary py-12 dark:text-dark-text">
         All Publishers
       </h1>
 

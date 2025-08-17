@@ -34,7 +34,7 @@ const [wrongPassword, setWrongPassword] = useState("");
           style: {
             border: "1px solid #08086c",
             color: "white",
-            backgroundImage: "linear-gradient(to bottom right, #050342,#01c3f4 )"
+            backgroundImage: "linear-gradient(to bottom right, #040017,#100136 )"
           },
         });
         navigate(from);
