@@ -27,9 +27,7 @@ const Statistics = () => {
       <h1 className="text-center text-4xl xl:text-6xl text-light-text font-bold pb-12 font-secondary">
         Statistics
       </h1>
-      <div className="py-12 md:py-20 statiscticcontainer container mx-auto md:flex flex-col lg:flex-row items-center  gap-12 px-4 lg:px-0 space-y-6 lg:space-y-0">
-        
-
+      <div className="py-12 md:py-20 container mx-auto lg:flex flex-col lg:flex-row items-center  gap-12 px-4 lg:px-0 space-y-6 lg:space-y-0">
         <div className="p-3 lg:p-6 shadow-md flex-1  crd-1 bg-light-accent/90 border border-light-text/50 rounded-xl space-y-3 lg:space-y-3">
           <FiUsers
             style={{ margin: "auto" }}
@@ -43,8 +41,6 @@ const Statistics = () => {
             Total Users
           </h1>
         </div>
-
-
 
         <div className="bg-light-accent/90 border border-light-text/50 p-3 lg:p-6 shadow-md flex-1 crd-1 rounded-xl space-y-3 lg:space-y-6">
           <FaUserAlt
@@ -60,8 +56,6 @@ const Statistics = () => {
           </h1>
         </div>
 
-
-
         <div className="p-3 lg:p-6 shadow-md flex-1 crd-1 bg-light-accent/90 border border-light-text/50 rounded-xl space-y-3 lg:space-y-6">
           <MdWorkspacePremium
             style={{ margin: "auto" }}
@@ -75,8 +69,6 @@ const Statistics = () => {
             Premium Users
           </h1>
         </div>
-
-
       </div>
     </div>
   );

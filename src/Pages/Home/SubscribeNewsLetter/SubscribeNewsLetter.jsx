@@ -7,7 +7,7 @@ const SubscribeNewsLetter = () => {
       <div className="flex flex-col lg:flex-row items-center justify-center border-2 border-light-text/50 w-full">
         {/* Left side: BG image with icon */}
         <div
-          className="w-full xl:flex-1 lg:w-1/3 h-72 md:h-[200px] bg-cover bg-center relative"
+          className="w-full xl:flex-1 lg:w-1/3 h-72 md:h-[200px] lg:h-[300px] xl:h-[400px] bg-cover bg-center relative"
           style={{ backgroundImage: `url(${bgImg})` }}
         >
           {/* Icon centered */}
@@ -17,7 +17,7 @@ const SubscribeNewsLetter = () => {
         </div>
 
         {/* Right side: Text */}
-        <div className="w-full xl:flex-2 lg:w-2/3 bg-light-secondary px-6 md:px-12 py-10 md:py-0 flex flex-col justify-center md:pb-6 lg:pb-0">
+        <div className="w-full xl:flex-2 lg:w-2/3 bg-light-secondary px-6 md:px-12 py-10 md:py-0 flex flex-col justify-center md:pb-6 lg:pb-0 h-72 md:h-[200px] lg:h-[300px] xl:h-[400px]">
           <h2 className="text-center lg:text-left text-3xl md:text-4xl xl:text-6xl text-light-text font-bold pb-4 md:pt-6 font-secondary">
             Subscribe Now
           </h2>
