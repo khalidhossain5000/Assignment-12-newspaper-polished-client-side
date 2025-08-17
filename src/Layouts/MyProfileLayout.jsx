@@ -35,7 +35,7 @@ const MyProfileLayout = () => {
     <div>
       <div className="drawer  lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content bg-[#e8efef] ">
+        <div className="drawer-content bg-light-primary dark:bg-dark-primary ">
           <label
             htmlFor="my-drawer-2"
             className="btn btn-primary drawer-button lg:hidden"
@@ -56,7 +56,7 @@ const MyProfileLayout = () => {
           ></label>
           
           {/* bg-[#0093f0] */}
-          <div className=" poppins menu flex flex-col justify-between bg-light-text text-light-primary font-secondary text-[17px] font-medium min-h-full lg:w-80 max-w-64 p-4 ">
+          <div className=" font-secondary menu flex flex-col justify-between bg-light-text text-light-primary  text-[17px] font-medium min-h-full lg:w-80 max-w-64 p-4 ">
             <div className="logolinks">
               <Link to="/">
                 <img src={siteLogo} className="p-6 mb-6 lg:mb-9" alt="" />
