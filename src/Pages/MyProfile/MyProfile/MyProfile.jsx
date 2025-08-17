@@ -17,6 +17,7 @@ const MyProfile = () => {
   //   const isPremiumUser=currentUserFromDbData?.premiumInfo
 
   if (isLoading) return <Loading />;
+  
   return (
     <div className="w-full mx-auto bg-light-primary dark:bg-dark-primary rounded-2xl shadow-2xl pb-12">
       <div className="relative z-10 bg-[url('assets/background/another-bg.jpg')] bg-no-repeat bg-cover h-[200px] md:h-[300px] bg-top-right"></div>

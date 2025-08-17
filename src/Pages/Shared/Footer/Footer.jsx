@@ -4,24 +4,32 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaFacebook, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { NavLink } from "react-router";
+import useAuth from "../../../Hooks/useAuth";
 const Footer = () => {
+  const { user } = useAuth();
   const links = (
     <>
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/add-article">Add Articles</NavLink>
+        <NavLink to="/all-publisher">All Publishers</NavLink>
       </li>
-      <li>
-        <NavLink to="/subscription">Subscription</NavLink>
-      </li>
-      <li>
-        <NavLink to="/premium-articles">Premium Articles</NavLink>
-      </li>
-      <li className="inter">
+      <li className="">
         <NavLink to="/allArticles">All Articles</NavLink>
       </li>
+
+      {user && (
+        <>
+          {" "}
+          <li>
+            <NavLink to="/subscription">Subscription</NavLink>
+          </li>
+          <li>
+            <NavLink to="/premium-articles">Premium Articles</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (
