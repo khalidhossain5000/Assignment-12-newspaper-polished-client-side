@@ -58,7 +58,7 @@ a.focus{
 /* dark light mode code ends over here */
 
 a.active{
-    border-bottom: 2px solid blue;
+    border-bottom: 2px solid #ffdc26;
     padding-bottom: 5px;
 }
 

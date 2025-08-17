@@ -98,7 +98,7 @@ const ArticelsCard = ({ article }) => {
           </div>
         </div>
       ) : (
-        <div className="bg-gray-200 rounded-xl shadow-2xl h-full flex flex-col shadow-gray-600 ">
+        <div className="bg-light-primary rounded-xl shadow-2xl h-full flex flex-col shadow-gray-600 ">
           <img
             src={articlePic}
             className="max-h-60 lg:h-96"

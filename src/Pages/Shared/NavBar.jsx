@@ -5,7 +5,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import useRole from "../../Hooks/useRole";
 import Swal from "sweetalert2";
 import blackLogo from "../../assets/logo/new-black-logo.png";
-import darklogo from "../../assets/logo/footer-logo.webp"
+import darklogo from "../../assets/logo/footer-logo.webp";
 const NavBar = () => {
   const { user, logOut } = useAuth();
   const { role, roleLoading } = useRole();
@@ -73,25 +73,35 @@ const NavBar = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/add-article">Add Articles</NavLink>
+        <NavLink to="/allArticles">All Articles</NavLink>
       </li>
       <li>
-        <NavLink to="/subscription">Subscription</NavLink>
+        <NavLink to="/all-publisher">All Publishers</NavLink>
       </li>
+
+      {user && (
+        <>
+          <li>
+            <NavLink to="/add-article">Add Articles</NavLink>
+          </li>
+          <li>
+            <NavLink to="/subscription">Subscription</NavLink>
+          </li>
+
+          <li>
+            <NavLink to="/my-articles">My Articles</NavLink>
+          </li>
+          <li>
+            <NavLink to="/premium-articles">Premium Articles</NavLink>
+          </li>
+        </>
+      )}
+
       {!roleLoading && role === "admin" && (
         <li>
           <NavLink to="/dashboard">Dashboard</NavLink>
         </li>
       )}
-      <li>
-        <NavLink to="/my-articles">My Articles</NavLink>
-      </li>
-      <li>
-        <NavLink to="/premium-articles">Premium Articles</NavLink>
-      </li>
-      <li className="inter">
-        <NavLink to="/allArticles">All Articles</NavLink>
-      </li>
     </>
   );
 
@@ -103,13 +113,24 @@ const NavBar = () => {
           : "bg-light-accent/5 dark:bg-gradient-to-r dark:bg-dark-primary/30 py-3 lg:py-4 xl:py-5"
       }`}
     >
-
       <div className="container mx-auto ">
         <div className="hidden lg:flex items-center justify-between">
           {/* logo of the site */}
           <div>
-            <Link to='/'><img className="w-[150px] md:max-w-40 dark:hidden" src={blackLogo} alt="" /></Link>
-            <Link to='/'><img className="w-[150px] md:max-w-40 hidden dark:block" src={darklogo} alt="" /></Link>
+            <Link to="/">
+              <img
+                className="w-[150px] md:max-w-40 dark:hidden"
+                src={blackLogo}
+                alt=""
+              />
+            </Link>
+            <Link to="/">
+              <img
+                className="w-[150px] md:max-w-40 hidden dark:block"
+                src={darklogo}
+                alt=""
+              />
+            </Link>
           </div>
           {/* nav links */}
           <div className="links">
@@ -164,7 +185,7 @@ const NavBar = () => {
 
                 <button
                   onClick={handleLogOut}
-                  className="bg-light-accent text-light-text xl:py-[10px] xl:px-[30px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3"
+                  className="bg-light-accent text-light-text xl:py-[10px] xl:px-[30px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3 cursor-pointer hover:scale-95"
                 >
                   Log Out
                 </button>
@@ -224,7 +245,7 @@ const NavBar = () => {
 
                   <button
                     onClick={handleLogOut}
-                    className="bg-light-accent text-light-text xl:py-[10px] xl:px-[30px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3"
+                    className="bg-light-accent text-light-text xl:py-[10px] xl:px-[30px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3 cursor-pointer"
                   >
                     Log Out
                   </button>
@@ -239,7 +260,16 @@ const NavBar = () => {
         </div>
         {/* logo of the site */}
         <div className="pr-3">
-          <img className="w-[150px]" src={blackLogo} alt="" />
+          <Link to="/">
+            <img className="w-[150px] dark:hidden" src={blackLogo} alt="" />
+          </Link>
+          <Link to="/">
+            <img
+              className="w-[150px] hidden dark:block"
+              src={darklogo}
+              alt=""
+            />
+          </Link>
         </div>
       </div>
     </div>

@@ -38,7 +38,7 @@ const MyProfileLayout = () => {
         <div className="drawer-content bg-light-primary dark:bg-dark-primary ">
           <label
             htmlFor="my-drawer-2"
-            className="btn btn-primary drawer-button lg:hidden"
+            className="btn bg-light-accent text-dark-primary drawer-button lg:hidden"
           >
             <GiHamburgerMenu size={30} className="mx-3" />
           </label>

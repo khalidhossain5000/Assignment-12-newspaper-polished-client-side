@@ -70,7 +70,7 @@ const MyArticlesTable = ({ myArticle, serial, refetch }) => {
     });
   };
   const { articleTitle, isPremium } = myArticle;
- 
+
   return (
     <tr>
       <th>{serial + 1}</th>
@@ -86,16 +86,13 @@ const MyArticlesTable = ({ myArticle, serial, refetch }) => {
         >
           Details
         </Link> */}
-        <Link
-          to={`/article/${myArticle._id}`}
-          
-        >
-          <button  className="bg-light-accent text-light-text xl:py-[5px] xl:px-[20px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3 py-1 px-2 hover:bg-light-accent/60 transition duration-300 hover:scale-110 w-full font-secondary font-bold mx-auto cursor-pointer">Details</button>
+        <Link to={`/article/${myArticle._id}`}>
+          <button className="bg-light-accent text-light-text xl:py-[5px] xl:px-[20px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3 py-1 px-2 hover:bg-light-accent/60 transition duration-300 hover:scale-110 w-full font-secondary font-bold mx-auto cursor-pointer">
+            Details
+          </button>
         </Link>
       </td>
       <td>
-        
-
         <td className="py-4">
           {myArticle.status === "declined" ? (
             <div className="flex items-center gap-3">
@@ -139,7 +136,6 @@ const MyArticlesTable = ({ myArticle, serial, refetch }) => {
       </td>
       <td className="space-y-3">
         <div className="flex items-center gap-6">
-         
           <Link
             to={`/my-profile/update-my-article/${myArticle._id}`}
             onClick={() => handleArticleUpdate(myArticle)}

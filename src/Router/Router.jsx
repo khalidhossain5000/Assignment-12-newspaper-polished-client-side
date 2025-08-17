@@ -28,6 +28,8 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import MyArticleNav from "../Pages/MyProfile/MyArticle/MyArticleNav/MyArticleNav";
 import Forbidden from "../Pages/ForbiddenPage/Forbidden";
 import AdminRoute from "../Routes/AdminRoute";
+import AllPublisher from "../Pages/AllPublisher/AllPublisher";
+import PublisherPostPage from "../Pages/AllPublisher/PublisherPostPage";
 
 
 export const router = createBrowserRouter([
@@ -48,6 +50,10 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path:'all-publisher',
+        Component:AllPublisher
+      },
+      {
         path: "article/:id",
         element: (
           <PrivateRoute>
@@ -62,6 +68,10 @@ export const router = createBrowserRouter([
             <Subscription />
           </PrivateRoute>
         ),
+      },
+      {
+        path:'publisher-article/:id',
+        Component:PublisherPostPage
       },
       {
         path: "payment",
