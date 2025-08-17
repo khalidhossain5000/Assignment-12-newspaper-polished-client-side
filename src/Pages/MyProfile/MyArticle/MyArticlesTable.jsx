@@ -88,27 +88,13 @@ const MyArticlesTable = ({ myArticle, serial, refetch }) => {
         </Link> */}
         <Link
           to={`/article/${myArticle._id}`}
-          className="relative inline-block px-6 py-2 font-semibold text-white group"
+          
         >
-          <span className="absolute inset-0 w-full h-full transition duration-300 ease-out transform translate-x-1 translate-y-1 bg-blue-700 group-hover:-translate-x-0 group-hover:-translate-y-0 rounded-lg"></span>
-          <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg group-hover:shadow-xl transition duration-300 ease-out"></span>
-          <span className="relative">Details</span>
+          <button  className="bg-light-accent text-light-text xl:py-[5px] xl:px-[20px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3 py-1 px-2 hover:bg-light-accent/60 transition duration-300 hover:scale-110 w-full font-secondary font-bold mx-auto cursor-pointer">Details</button>
         </Link>
       </td>
       <td>
-        {/* {myArticle.status === "declined" ? (
-          <>
-            <span className="text-red-600 font-semibold">Declined</span>
-            <button
-              onClick={() => openModal(myArticle?.declineReason)}
-              className="ml-2 px-2 py-1 bg-blue-500 text-white rounded"
-            >
-              Reason
-            </button>
-          </>
-        ) : (
-          <span className="capitalize">{myArticle?.status}</span>
-        )} */}
+        
 
         <td className="py-4">
           {myArticle.status === "declined" ? (
@@ -144,7 +130,7 @@ const MyArticlesTable = ({ myArticle, serial, refetch }) => {
 
       <td>
         {isPremium ? (
-          <span className="inline-block px-4 py-[6px] text-sm font-semibold text-black bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
+          <span className="inline-block px-4 py-[6px] text-sm font-semibold text-light-text bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
             Premium
           </span>
         ) : (
@@ -153,23 +139,17 @@ const MyArticlesTable = ({ myArticle, serial, refetch }) => {
       </td>
       <td className="space-y-3">
         <div className="flex items-center gap-6">
-          {/* <Link
-            to={`/my-profile/update-my-article/${myArticle._id}`}
-            onClick={() => handleArticleUpdate(myArticle)}
-            className="btn btn-error btn-sm cursor-pointer"
-          >
-            Update Article
-          </Link> */}
+         
           <Link
             to={`/my-profile/update-my-article/${myArticle._id}`}
             onClick={() => handleArticleUpdate(myArticle)}
             className="
     inline-flex items-center whitespace-nowrap
     px-5 py-2 text-sm font-semibold
-    text-[#16b7cc] border-2 border-[#16b7cc]
+    text-light-text hover:text-light-text border-1 border-light-text
     rounded-full
     transition-all duration-200
-    hover:bg-[#16b7cc] hover:text-white
+    hover:bg-light-accent
     hover:shadow-lg hover:-translate-y-0.5
   "
           >
@@ -185,7 +165,7 @@ const MyArticlesTable = ({ myArticle, serial, refetch }) => {
 
           <button
             onClick={() => handleDelete(myArticle._id)}
-            className="whitespace-nowrap inline-block px-6 py-2 bg-[#211f54] text-white font-medium rounded-md transition-transform duration-500 ease-out hover:bg-red-600 cursor-pointer hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#16b7cc]"
+            className="bg-light-accent text-light-text xl:py-[5px] xl:px-[20px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3 py-1 px-2 hover:bg-light-accent/60 transition duration-300 hover:scale-110 w-6/12 font-secondary font-bold mx-auto cursor-pointer"
           >
             Delete Article
           </button>

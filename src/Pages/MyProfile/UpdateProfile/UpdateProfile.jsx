@@ -73,10 +73,16 @@ const UpdateProfile = () => {
   if (loading) return <Loading />;
   return (
     <div className="bg-[#e8efef] shadow-2xl rounded-xl">
-      <div className="py-24 bg-gradient-to-tr from-[#7e7dfd] via-white to-[#ffcfff]">
-        <h1 className="text-center text-3xl font-bold inter  py-6">
-          Update Profile
-        </h1>
+      <div className="w-full h-64 md:h-80 bg-gradient-to-tr from-light-text/5 via-light-primary to-light-secondary flex items-center justify-center relative overflow-hidden">
+        <div className="text-center px-4">
+          <h1 className="text-light-text font-secondary text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
+            Update Profile
+          </h1>
+          
+        </div>
+        {/* Subtle overlay shapes in primary text color */}
+        <div className="absolute top-0 right-0 w-32 h-32 bg-[#211F54] opacity-10 rounded-full transform translate-x-1/3 -translate-y-1/3"></div>
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#211F54] opacity-10 rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
       </div>
       <form onSubmit={handleSubmit} className=" space-y-4 max-w-2xl mt-12 shadow-2xl mx-auto bg-[#f0f2fb] p-6 lg:p-12">
         <div className="mx-auto  text-center">
@@ -85,7 +91,7 @@ const UpdateProfile = () => {
             type="text"
             name="updatedName"
             defaultValue={user?.displayName}
-            className=" mx-auto border border-gray-500 w-full md:w-9/12 p-2 rounded-md placeholder:text-[#211f54] focus:outline-none
+            className=" mx-auto border border-light-text/60 w-full md:w-9/12 p-2 rounded-md placeholder:text-[#211f54] focus:outline-none
              focus:ring-0
              focus:shadow-[0_0_0_4px_rgba(33,31,84,0.2)]
              transition duration-300"
@@ -93,8 +99,8 @@ const UpdateProfile = () => {
         </div>
         {/* updaetd image */}
         <div>
-          <div className="mx-auto border border-gray-600 p-6 md:w-9/12 my-2 rounded-xl shadown-md">
-            <label htmlFor="image" className="block text-gray-800 py-3 text-xl">
+          <div className="mx-auto border border-light-text/60 p-6 md:w-9/12 my-2 rounded-xl shadown-md">
+            <label htmlFor="image" className="block text-light-text/60 py-3 text-xl">
               Select Profile Image:
             </label>
             {previewUrl && (
@@ -106,7 +112,7 @@ const UpdateProfile = () => {
             )}
             <label
               htmlFor="image"
-              className="mx-auto flex items-center gap-3 px-4 py-2 bg-gray-100 text-gray-700 border border-gray-300 rounded-md cursor-pointer hover:bg-gray-200 transition"
+              className="mx-auto flex items-center gap-3 px-4 py-2 bg-light-primary text-light-text border border-light-text/60 rounded-md cursor-pointer hover:bg-gray-200 transition"
             >
               <FiUpload className="text-xl" />
               <span>Choose Image</span>
@@ -126,7 +132,7 @@ const UpdateProfile = () => {
         <div className="text-center">
           <button
           type="submit"
-          className="text-center mt-3 px-6 lg:px-12 py-2 lg:py-3 rounded-sm shadow-md bg-[#16b7cc] hover:bg-cyan-600 hover:scale-100 w-full md:text-xl font-bold text-white cursor-pointer lg:w-9/12 mx-auto"
+          className="bg-light-accent text-light-text xl:py-[10px] xl:px-[30px] rounded-lg xl:text-xl whitespace-nowrap md:py-2 md:px-3 py-1 px-2 hover:bg-light-accent/60 transition duration-300 hover:scale-110 w-full cursor-pointer font-secondary font-bold"
         >
           {
             updatingLoader ? "Updating..........." : "Update Profile"

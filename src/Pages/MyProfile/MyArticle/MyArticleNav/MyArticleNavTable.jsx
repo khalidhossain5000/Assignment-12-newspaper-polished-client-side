@@ -95,19 +95,7 @@ const MyArticleNavTable = ({ myArticle, serial, refetch }) => {
         </Link>
       </td>
 
-      {/* {myArticle.status === "declined" ? (
-          <>
-            <span className="text-red-600 font-semibold">Declined</span>
-            <button
-              onClick={() => openModal(myArticle?.declineReason)}
-              className="ml-2 px-2 py-1 bg-blue-500 text-white rounded"
-            >
-              Reason
-            </button>
-          </>
-        ) : (
-          <span className="capitalize">{myArticle?.status}</span>
-        )} */}
+     
 
       <td className="py-4">
         {myArticle.status === "declined" ? (

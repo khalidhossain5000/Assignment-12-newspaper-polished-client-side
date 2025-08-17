@@ -56,7 +56,7 @@ const MyProfileLayout = () => {
           ></label>
           
           {/* bg-[#0093f0] */}
-          <div className=" poppins menu flex flex-col justify-between bg-[#05050b] text-white urbanist text-[17px] font-medium min-h-full lg:w-80 max-w-64 p-4 ">
+          <div className=" poppins menu flex flex-col justify-between bg-light-text text-light-primary font-secondary text-[17px] font-medium min-h-full lg:w-80 max-w-64 p-4 ">
             <div className="logolinks">
               <Link to="/">
                 <img src={siteLogo} className="p-6 mb-6 lg:mb-9" alt="" />
@@ -73,7 +73,7 @@ const MyProfileLayout = () => {
               <div className="mt-3 lg:mt-96">
                 <Link
                   to="/"
-                  className="inline-block bg-gradient-to-r from-[#211f54] to-[#4d4ba1] text-white px-5 py-2 lg:py-3 rounded-xl font-semibold text-md tracking-wide shadow-md hover:scale-105 transition duration-200"
+                   className="inline-block bg-gradient-to-r from-light-accent to-light-accent/90 text-light-text font-secondary lg:font-bold px-5 py-2 lg:py-3 rounded-xl font-semibold text-sm tracking-wide shadow-md hover:scale-105 transition duration-200"
                 >
                   Back To Home
                 </Link>

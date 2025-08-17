@@ -28,7 +28,7 @@ const MyArticleNav = () => {
   if (isPending) return <Loading />;
   return (
     <div>
-       <div className="w-full h-64 md:h-80 lg:h-96 bg-gradient-to-tr from-light-text/5 via-light-primary to-light-secondary flex items-center justify-center relative overflow-hidden">
+       <div className="w-full h-64 md:h-80 bg-gradient-to-tr from-light-text/5 via-light-primary to-light-secondary flex items-center justify-center relative overflow-hidden">
         <div className="text-center px-4">
           <h1 className="text-light-text font-secondary text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
             My Articles

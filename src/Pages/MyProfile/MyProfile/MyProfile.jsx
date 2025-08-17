@@ -18,10 +18,10 @@ const MyProfile = () => {
 
   if (isLoading) return <Loading />;
   return (
-    <div className="w-full mx-auto bg-[#e4ebeb] rounded-2xl shadow-2xl pb-12">
-      <div className="relative z-10 bg-[url('assets/background/another-bg.jpg')] bg-no-repeat bg-cover h-[200px] md:h-[500px] bg-top-right"></div>
+    <div className="w-full mx-auto bg-light-primary rounded-2xl shadow-2xl pb-12">
+      <div className="relative z-10 bg-[url('assets/background/another-bg.jpg')] bg-no-repeat bg-cover h-[200px] md:h-[300px] bg-top-right"></div>
 
-      <div className="info bg-white container shadow-2xl rounded-2xl mx-auto  relative p-6 pb-12 lg:pb-20 lg:px-12">
+      <div className="info bg-light-secondary container shadow-xl shadow-light-accent/10 rounded-xl mx-auto  relative p-6 pb-12 lg:pb-20 lg:px-12">
         <div className="imgname flex flex-col lg:flex-row items-center gap-6">
           <img
             src={user?.photoURL}
@@ -29,29 +29,29 @@ const MyProfile = () => {
             className="lg:-mt-24 lg:z-30 relative w-24 shadow-md rounded-full lg:w-64 lg:rounded-[100px] p-2 lg:p-5 bg-transparent"
           />
           <div>
-            <h1 className="text-center py-3 lg:text-3xl text-[#030214] font-bold">
-              {user?.displayName}
+            <h1 className="text-center md:text-left py-3 lg:text-3xl text-light-text font-secondary font-bold">
+              Name: {user?.displayName}
             </h1>
-            <h2 className="text-xl font-bold text-green">
+            <h2 className="text-xl text-center md:text-left font-bold text-light-text ">
               Email: {user?.email}
             </h2>
           </div>
         </div>
 
         <div className="mt-12 space-y-2 bg-white/90 p-5 rounded-xl shadow-sm border border-gray-200 flex flex-col lg:flex-row items-center justify-around">
-          <h2 className="text-lg lg:text-xl font-semibold text-[#211f54] tracking-wide">
+          <h2 className="text-lg lg:text-xl font-semibold text-light-text tracking-wide">
             Role:{" "}
-            <span className="font-bold text-gray-900">
+            <span className="font-bold text-light-text/50">
               {currentUserFromDbData?.role}
             </span>
           </h2>
 
-          <h2 className="text-sm lg:text-base font-semibold text-[#211f54] tracking-wide">
+          <h2 className="text-sm lg:text-base font-semibold lg:font-bold text-light-text tracking-wide">
             Premium Status:{" "}
             <span
-              className={`ml-1 font-bold px-3 py-1 rounded-full text-white text-xs ${
+              className={`ml-1 font-bold px-3 py-1 rounded-full text-light-text text-xs ${
                 currentUserFromDbData?.premiumInfo
-                  ? "bg-gradient-to-r from-[#211f54] to-[#4b61d1]"
+                  ? "bg-gradient-to-r from-light-accent to-light-accent/90 "
                   : "bg-red-600"
               }`}
             >
